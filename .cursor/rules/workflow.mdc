@@ -1,0 +1,9 @@
+# Workflow Rule
+
+- Start from a plan, an existing task spec, or a clearly scoped task request.
+- Derive or refine a narrow task spec before editing.
+- Prefer one task with one reviewable outcome.
+- Implement only after the task boundary is clear.
+- Validate explicitly after implementation.
+- Write back stable facts only when justified.
+- Promote repeated workflows into skills when they stabilize.

@@ -1,0 +1,30 @@
+# Write-back Rule
+
+Write back only stable, reusable information.
+
+Before writing back, ask:
+- will this still matter later?
+- is it reusable later?
+- does it have a clear home?
+
+If the answer is not clearly yes, do not write it back.
+
+## Write back when
+- project scope or boundaries became clearer
+- a validation reference became reusable
+- a workflow rule became stable enough to reuse
+- a repeated procedure should become or update a skill
+
+## Write back to
+- `docs/facts/*` for stable project context
+- `skills/*` for reusable procedures
+- `AGENTS.md` or rules only for repository-wide guidance
+- change summaries for task-local delivery notes
+
+## Do not write back
+- temporary debugging notes
+- unstable experiments
+- one-off implementation chatter
+- details that are only useful for the current task
+
+Facts are stable context, not an archive.

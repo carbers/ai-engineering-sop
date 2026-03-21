@@ -1,0 +1,8 @@
+# Boundaries Rule
+
+- Do not introduce speculative abstractions.
+- Do not perform opportunistic refactors.
+- Do not edit unrelated modules in the same task unless required for compilation or contract alignment.
+- Do not implement future-phase work during current-phase tasks.
+- Prefer existing structures over creating parallel systems.
+- Narrow ambiguous work instead of expanding design scope.

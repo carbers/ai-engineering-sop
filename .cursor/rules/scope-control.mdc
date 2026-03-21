@@ -1,0 +1,8 @@
+# Scope Control Rule
+
+- Keep tasks narrow and reviewable.
+- One task should produce one primary outcome.
+- If a task mixes design, implementation, migration, and cleanup, split it.
+- Keep the review surface small.
+- If multiple implementation paths exist, choose the smallest one that fits the current phase.
+- If the task becomes broader while working, stop and narrow it again.

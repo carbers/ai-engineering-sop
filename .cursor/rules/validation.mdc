@@ -1,0 +1,15 @@
+# Validation Rule
+
+- Black-box validation is the default acceptance path.
+- White-box validation supplements black-box acceptance when direct protection of internal logic is warranted.
+- White-box validation is conditional and should be added when the change affects:
+  - core branch behavior
+  - internal state transitions
+  - deterministic bugfix regression paths
+  - matchers, parsers, schedulers, rules engines, caches, traces, analyzers
+  - meaningful internal contracts that black-box checks alone will not protect
+
+- White-box validation should protect meaningful internals, not incidental implementation details.
+- Validation must be explicit enough to review.
+- Avoid vague statements such as "tested manually" without describing what was checked.
+- Do not use raw coverage numbers as the primary objective.
