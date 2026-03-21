@@ -1,7 +1,7 @@
 # Project Scope
 
 ## Current Phase Goal
-Establish a practical, reusable v1 SOP repository for AI-assisted engineering work.
+Refine and maintain a practical, reusable SOP starter for AI-assisted engineering work.
 
 ## In Scope
 - repository-level guidance

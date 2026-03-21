@@ -44,6 +44,9 @@ Black-box validation is the default acceptance path. White-box validation is add
 - `.cursor/rules/*`
   Execution guardrails for Cursor.
 
+- `docs/guides/*`
+  Practical workflow guidance for adopting and using the SOP.
+
 - `docs/templates/*`
   Reusable working artifacts such as plans, task specs, and change summaries.
 
@@ -73,8 +76,8 @@ The smallest practical starting point is:
 2. keep `.cursor/rules/*`
 3. keep `docs/templates/*`
 4. keep `docs/facts/facts-index.md`
-5. initialize `docs/facts/project-scope.md`
-6. keep the two initial skills: `skills/plan-to-spec.md` and `skills/design-whitebox-tests.md`
+5. keep the two initial skills: `skills/plan-to-spec.md` and `skills/design-whitebox-tests.md`
+6. write a first plan, then initialize `docs/facts/project-scope.md` when stable scope is clear
 
 ## What this repository is not
 
@@ -91,5 +94,5 @@ This repository is not:
 
 1. read `AGENTS.md`
 2. read `docs/guides/new-project-sop.md`
-3. initialize `docs/facts/project-scope.md`
-4. write a first plan from `docs/templates/plan-template.md`
+3. write a first plan from `docs/templates/plan-template.md`
+4. initialize `docs/facts/project-scope.md` when stable scope is clear
