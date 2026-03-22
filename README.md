@@ -55,7 +55,7 @@ Black-box validation is the default acceptance path. White-box validation is add
   Practical workflow guidance for adopting and using the SOP.
 
 - `docs/templates/*`
-  Reusable working artifacts such as plans, task specs, and change summaries.
+  Reusable working artifacts such as plans, task specs, prompt scaffolds, and change summaries.
 
 - `docs/specs/*`
   Task specs used as the default execution artifact between plan and implementation.
@@ -108,3 +108,5 @@ This repository is not:
 3. read `docs/specs/README.md`
 4. create or refine a first plan, using `docs/templates/plan-template.md` only when you want a durable written plan
 5. initialize `docs/facts/project-scope.md` when stable scope is clear
+
+When design, planning, and execution are split across different tools or roles, also see `docs/guides/design-to-spec-handoff.md`.

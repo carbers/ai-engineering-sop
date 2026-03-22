@@ -74,3 +74,10 @@ This SOP is intended to remain lightweight.
 The goal is not to create many documents.  
 The goal is to create enough structure that implementation stays controlled, reviewable, and reusable.  
 The goal is one or more small specs, not one large spec.
+
+## Multi-Model Collaboration Variant
+
+If design discussion, planning, spec derivation, and execution are split across different tools or different people, use `docs/guides/design-to-spec-handoff.md`.
+
+That guide is an extension of this SOP, not a replacement for it.
+The same core rule still applies: implementation should run from a clear task spec, not directly from a broad design discussion or a broad plan.

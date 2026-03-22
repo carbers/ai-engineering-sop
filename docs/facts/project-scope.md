@@ -8,6 +8,7 @@ Refine and maintain a practical, reusable SOP starter for AI-assisted engineerin
 - Cursor rules
 - Claude adapter entry file
 - practical templates and conventions for plan, task spec, spec artifact management, change summary, and project scope
+- multi-model collaboration guidance and prompt handoff templates
 - initial facts structure
 - initial reusable skills for plan-to-spec and white-box test design
 
@@ -28,6 +29,7 @@ Refine and maintain a practical, reusable SOP starter for AI-assisted engineerin
 - a plan-first workflow is central
 - plans should narrow into one or more task specs before implementation
 - task specs should stay small, track lightweight status, and show short execution checklists
+- multi-model collaboration should still converge on spec-first execution
 - write-back must be selective
 - skill promotion should happen only after patterns stabilize
 
