@@ -1,8 +1,11 @@
 # Workflow Rule
 
 - Start from a plan, an existing task spec, or a clearly scoped task request.
-- Derive or refine a narrow task spec before editing.
-- Prefer one task with one reviewable outcome.
+- If a plan or phase slice exists, derive or refine one or more task specs before editing. Use `skills/plan-to-spec.md` by default.
+- If iterating within the same reviewable slice, refine the existing spec instead of creating parallel docs.
+- If the primary outcome, boundary, or validation path changes, create a new dated spec before editing.
+- Prefer one task spec with one primary reviewable outcome and a short checklist.
+- A tiny task may skip spec creation only when the request is already effectively spec-complete and trivially narrow.
 - Implement only after the task boundary is clear.
 - Validate explicitly after implementation.
 - Write back stable facts only when justified.

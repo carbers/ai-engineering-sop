@@ -5,7 +5,7 @@ Use this SOP when starting a new project or when introducing structure into an e
 ## Default startup order
 
 1. clarify the project at a plan level
-2. derive task specs from the plan
+2. derive one or more task specs from the plan
 3. implement narrowly
 4. validate explicitly
 5. write back stable facts
@@ -34,9 +34,13 @@ The plan should clarify:
 - first slice
 
 ### 3. Derive task specs
-Use `skills/plan-to-spec.md` and `docs/templates/task-spec-template.md`.
+Use `skills/plan-to-spec.md`, `docs/specs/README.md`, and `docs/templates/task-spec-template.md`.
 
 A task spec should shrink the plan into a narrow implementation contract.
+If the plan contains multiple reviewable slices, derive multiple specs instead of one large spec.
+During iteration, refine the current spec while the work is still the same slice.
+Create a new dated spec when the primary outcome, boundary, or validation path changes.
+Only tiny task requests that are already effectively spec-complete and trivially narrow may skip spec creation.
 
 ### 4. Decide starter/code skeleton work deliberately
 Project starter work is a result of planning, not a global precondition.
@@ -62,4 +66,5 @@ Do not turn every task discussion into permanent docs.
 
 This SOP is intended to remain lightweight.  
 The goal is not to create many documents.  
-The goal is to create enough structure that implementation stays controlled, reviewable, and reusable.
+The goal is to create enough structure that implementation stays controlled, reviewable, and reusable.  
+The goal is one or more small specs, not one large spec.

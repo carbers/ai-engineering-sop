@@ -15,6 +15,7 @@ A phase-level plan that includes:
 ### Expected outcome
 The plan is converted into one or more narrow task specs that:
 - define in-scope vs out-of-scope
+- stay small enough to review independently, splitting when one spec would become too large
 - define validation clearly
 - identify white-box triggers
 - identify write-back needs

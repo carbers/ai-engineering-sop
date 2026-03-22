@@ -36,6 +36,9 @@ Use the repository layers as follows:
 - `docs/templates/*`  
   Reusable document skeletons used during work.
 
+- `docs/specs/*`
+  Task specs that bridge plans and implementation.
+
 - `docs/facts/*`  
   Stable context worth re-reading later.
 
@@ -46,12 +49,17 @@ Use the repository layers as follows:
 
 Follow this operating sequence by default:
 
-1. start from a plan or a clearly scoped existing task request
-2. derive or refine a narrow task spec before implementation
+1. start from a plan, a phase slice, or a clearly scoped existing task request
+2. derive or refine one or more narrow task specs before implementation
 3. implement the smallest coherent change
 4. validate explicitly
 5. write back stable facts when justified
 6. promote repeated workflows into skills when they stabilize
+
+When a plan or phase slice exists, the default execution path is `plan -> one or more task specs -> implementation -> validation`.
+If iterating within the same reviewable slice, refine the existing spec.
+If the primary outcome, boundary, or validation path changes, create a new dated spec first.
+Only tiny task requests that are already effectively spec-complete and trivially narrow may skip spec creation.
 
 Use change summaries for task-local delivery notes. Do not turn them into permanent facts.
 

@@ -9,7 +9,7 @@ Use this repository when you want a project to move from planning to narrow exec
 This starter is for teams that want a practical default workflow for:
 
 1. framing work with a plan
-2. deriving narrow task specs
+2. deriving one or more narrow task specs
 3. implementing the smallest coherent change
 4. validating explicitly, with black-box checks by default
 5. writing back stable facts
@@ -22,11 +22,15 @@ It is suitable for new projects, existing projects, non-web projects, and mixed 
 The intended workflow is:
 
 1. write or refine a plan
-2. derive one or more narrow task specs
+2. derive one or more narrow task specs in `docs/specs/`
 3. implement narrowly
 4. validate explicitly
 5. write back stable facts when justified
 6. promote repeated workflows into skills when they stabilize
+
+When a plan or phase slice exists, the default path is `plan -> one or more task specs -> implementation -> validation`.
+During iteration, refine the same spec while the work is still the same reviewable slice and create a new dated spec when the outcome, boundary, or validation path changes.
+Only tiny task requests that are already effectively spec-complete and trivially narrow may skip spec creation.
 
 Black-box validation is the default acceptance path. White-box validation is added when internal logic is regression-sensitive, stateful, branch-heavy, or otherwise needs direct protection.
 
@@ -49,6 +53,9 @@ Black-box validation is the default acceptance path. White-box validation is add
 
 - `docs/templates/*`
   Reusable working artifacts such as plans, task specs, and change summaries.
+
+- `docs/specs/*`
+  Task specs used as the default execution artifact between plan and implementation.
 
 - `docs/facts/*`
   Stable reusable context, not an archive of task chatter.
@@ -75,9 +82,10 @@ The smallest practical starting point is:
 1. keep `AGENTS.md`
 2. keep `.cursor/rules/*`
 3. keep `docs/templates/*`
-4. keep `docs/facts/facts-index.md`
-5. keep the two initial skills: `skills/plan-to-spec.md` and `skills/design-whitebox-tests.md`
-6. write a first plan, then initialize `docs/facts/project-scope.md` when stable scope is clear
+4. keep `docs/specs/README.md`
+5. keep `docs/facts/facts-index.md`
+6. keep the two initial skills: `skills/plan-to-spec.md` and `skills/design-whitebox-tests.md`
+7. write a first plan, then initialize `docs/facts/project-scope.md` when stable scope is clear
 
 ## What this repository is not
 
@@ -94,5 +102,6 @@ This repository is not:
 
 1. read `AGENTS.md`
 2. read `docs/guides/new-project-sop.md`
-3. write a first plan from `docs/templates/plan-template.md`
-4. initialize `docs/facts/project-scope.md` when stable scope is clear
+3. read `docs/specs/README.md`
+4. write a first plan from `docs/templates/plan-template.md`
+5. initialize `docs/facts/project-scope.md` when stable scope is clear
