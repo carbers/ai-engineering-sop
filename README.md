@@ -21,7 +21,7 @@ It is suitable for new projects, existing projects, non-web projects, and mixed 
 
 The intended workflow is:
 
-1. write or refine a plan
+1. create or refine a plan
 2. derive one or more narrow task specs in `docs/specs/`
 3. implement narrowly
 4. validate explicitly
@@ -29,6 +29,9 @@ The intended workflow is:
 6. promote repeated workflows into skills when they stabilize
 
 When a plan or phase slice exists, the default path is `plan -> one or more task specs -> implementation -> validation`.
+A plan may come from an interactive planning session or a written plan document.
+Use `docs/templates/plan-template.md` only when the plan should become a durable repo artifact worth re-reading, sharing, or handing off.
+Plans may remain temporary. The task spec is the default durable execution artifact.
 During iteration, refine the same spec while the work is still the same reviewable slice and create a new dated spec when the outcome, boundary, or validation path changes.
 Only tiny task requests that are already effectively spec-complete and trivially narrow may skip spec creation.
 
@@ -85,7 +88,7 @@ The smallest practical starting point is:
 4. keep `docs/specs/README.md`
 5. keep `docs/facts/facts-index.md`
 6. keep the two initial skills: `skills/plan-to-spec.md` and `skills/design-whitebox-tests.md`
-7. write a first plan, then initialize `docs/facts/project-scope.md` when stable scope is clear
+7. create a first plan in your planning workflow, then initialize `docs/facts/project-scope.md` when stable scope is clear
 
 ## What this repository is not
 
@@ -103,5 +106,5 @@ This repository is not:
 1. read `AGENTS.md`
 2. read `docs/guides/new-project-sop.md`
 3. read `docs/specs/README.md`
-4. write a first plan from `docs/templates/plan-template.md`
+4. create or refine a first plan, using `docs/templates/plan-template.md` only when you want a durable written plan
 5. initialize `docs/facts/project-scope.md` when stable scope is clear

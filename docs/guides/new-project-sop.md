@@ -21,8 +21,11 @@ Before coding, clarify:
 - the main constraints
 - the first reviewable slice
 
-### 2. Write the first plan
-Use `docs/templates/plan-template.md`.
+### 2. Establish the first plan
+First establish the plan in the planning workflow you actually use.
+A written plan document is optional.
+Use `docs/templates/plan-template.md` only when the plan should become a durable repo artifact worth re-reading, sharing, or handing off.
+By default, persist the task spec rather than the plan.
 
 The plan should clarify:
 - problem
@@ -32,6 +35,9 @@ The plan should clarify:
 - risks
 - phased direction
 - first slice
+
+If the plan is already clear from an interactive planning session, move directly to spec derivation.
+Do not force a second written plan unless it adds durable value.
 
 ### 3. Derive task specs
 Use `skills/plan-to-spec.md`, `docs/specs/README.md`, and `docs/templates/task-spec-template.md`.

@@ -57,6 +57,9 @@ Follow this operating sequence by default:
 6. promote repeated workflows into skills when they stabilize
 
 When a plan or phase slice exists, the default execution path is `plan -> one or more task specs -> implementation -> validation`.
+A plan may come from an interactive planning session or a written plan document.
+Use `docs/templates/plan-template.md` only when the plan should become a durable repo artifact worth re-reading, sharing, or handing off.
+Plans may remain temporary. The task spec is the default durable execution artifact for implementation and iteration.
 If iterating within the same reviewable slice, refine the existing spec.
 If the primary outcome, boundary, or validation path changes, create a new dated spec first.
 Only tiny task requests that are already effectively spec-complete and trivially narrow may skip spec creation.
