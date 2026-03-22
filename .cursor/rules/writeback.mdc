@@ -1,3 +1,8 @@
+---
+description: Write-back policy for stable reusable information
+alwaysApply: true
+---
+
 # Write-back Rule
 
 Write back only stable, reusable information.

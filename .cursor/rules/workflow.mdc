@@ -1,3 +1,8 @@
+---
+description: Default plan-to-spec-to-implementation execution sequence
+alwaysApply: true
+---
+
 # Workflow Rule
 
 - Start from a plan, an existing task spec, or a clearly scoped task request.

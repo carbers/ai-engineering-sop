@@ -43,10 +43,7 @@ Do not force a second written plan unless it adds durable value.
 Use `skills/plan-to-spec.md`, `docs/specs/README.md`, and `docs/templates/task-spec-template.md`.
 
 A task spec should shrink the plan into a narrow implementation contract.
-If the plan contains multiple reviewable slices, derive multiple specs instead of one large spec.
-During iteration, refine the current spec while the work is still the same slice.
-Create a new dated spec when the primary outcome, boundary, or validation path changes.
-Only tiny task requests that are already effectively spec-complete and trivially narrow may skip spec creation.
+See `docs/specs/README.md` for naming, splitting, and lifecycle conventions.
 
 ### 4. Decide starter/code skeleton work deliberately
 Project starter work is a result of planning, not a global precondition.

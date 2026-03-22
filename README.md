@@ -28,14 +28,7 @@ The intended workflow is:
 5. write back stable facts when justified
 6. promote repeated workflows into skills when they stabilize
 
-When a plan or phase slice exists, the default path is `plan -> one or more task specs -> implementation -> validation`.
-A plan may come from an interactive planning session or a written plan document.
-Use `docs/templates/plan-template.md` only when the plan should become a durable repo artifact worth re-reading, sharing, or handing off.
-Plans may remain temporary. The task spec is the default durable execution artifact.
-During iteration, refine the same spec while the work is still the same reviewable slice and create a new dated spec when the outcome, boundary, or validation path changes.
-Only tiny task requests that are already effectively spec-complete and trivially narrow may skip spec creation.
-
-Black-box validation is the default acceptance path. White-box validation is added when internal logic is regression-sensitive, stateful, branch-heavy, or otherwise needs direct protection.
+See `AGENTS.md` for the full working model, including when plans should be persisted, when specs may be skipped, and how validation layers work.
 
 ## Repository roles
 
@@ -55,7 +48,7 @@ Black-box validation is the default acceptance path. White-box validation is add
   Practical workflow guidance for adopting and using the SOP.
 
 - `docs/templates/*`
-  Reusable working artifacts such as plans, task specs, prompt scaffolds, and change summaries.
+  Reusable working artifacts such as plans, task specs, change summaries, and prompt scaffolds for multi-model handoff.
 
 - `docs/specs/*`
   Task specs used as the default execution artifact between plan and implementation.
@@ -109,4 +102,8 @@ This repository is not:
 4. create or refine a first plan, using `docs/templates/plan-template.md` only when you want a durable written plan
 5. initialize `docs/facts/project-scope.md` when stable scope is clear
 
-When design, planning, and execution are split across different tools or roles, also see `docs/guides/design-to-spec-handoff.md`.
+When design, planning, and execution are split across different tools or roles, also see `docs/guides/design-to-spec-handoff.md` and the prompt scaffolds in `docs/templates/design-to-planner-prompt-template.md` and `docs/templates/spec-to-executor-prompt-template.md`.
+
+---
+
+**SOP Starter Version**: 0.2.0 — 2026-03-22

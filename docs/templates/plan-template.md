@@ -1,9 +1,7 @@
 # Plan Template
 
-Use this template only when a plan should become a durable repo artifact.
-A plan may also come from an interactive planning session.
-If the plan is already clear and does not need durable persistence, move directly into task spec derivation instead of duplicating it here.
-This template is a fallback for preserving a plan, not the default execution artifact.
+Use this template only when a plan should become a durable repo artifact worth re-reading, sharing, or handing off.
+If the plan is already clear enough to derive specs, skip this and move directly to task spec creation.
 
 ## Problem
 What problem is being solved?

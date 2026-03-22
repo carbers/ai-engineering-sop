@@ -4,9 +4,7 @@
 Convert a plan or phase slice into one or more narrow, reviewable task specs.
 
 This skill is the default bridge between planning and implementation.
-It exists to keep implementers from working directly from a broad plan.
-The plan may come from an interactive planning session or a written plan document.
-The task spec, not the plan document, is the default durable execution artifact.
+It keeps implementers from working directly from a broad plan.
 
 ## When to use
 Use this skill by default when:
@@ -14,8 +12,7 @@ Use this skill by default when:
 - work is about to move into implementation
 - task boundaries, validation, or write-back needs are still implicit
 
-Only tiny task requests that are already effectively spec-complete and trivially narrow may skip spec creation.
-Do not require a separate written plan document when the plan is already clear enough to derive specs.
+See `AGENTS.md` § Working model for when spec creation may be skipped.
 
 ## Inputs
 - current plan or phase slice

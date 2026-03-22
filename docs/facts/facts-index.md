@@ -34,10 +34,4 @@ Do not put these into facts:
 
 ## Routing rule
 
-Before writing to facts, ask:
-
-1. Will this still matter later?
-2. Can it be reused later?
-3. Does it have a clear home in `docs/facts/*`?
-
-If not, do not write it here.
+Follow the write-back policy in `AGENTS.md` before adding content here.

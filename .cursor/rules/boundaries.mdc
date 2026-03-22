@@ -1,3 +1,8 @@
+---
+description: Prevent speculative abstractions and scope expansion
+alwaysApply: true
+---
+
 # Boundaries Rule
 
 - Do not introduce speculative abstractions.

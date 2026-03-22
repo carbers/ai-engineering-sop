@@ -12,6 +12,10 @@ Use `docs/specs/*` to hold narrow task specs that:
 This directory does not need a central index.
 Use filenames plus optional `Related Specs` links for navigation.
 
+## Example
+
+See `20260101-001-example-api-rate-limiting.md` for a concrete example of a filled-in task spec.
+
 ## Naming
 
 Store each spec as:

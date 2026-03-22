@@ -1,3 +1,8 @@
+---
+description: Layered validation expectations for implementation tasks
+alwaysApply: true
+---
+
 # Validation Rule
 
 - Black-box validation is the default acceptance path.

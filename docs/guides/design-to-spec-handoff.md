@@ -73,10 +73,8 @@ When this happens, the planner / specifier should explicitly list the missing de
 
 ## Iteration Loop
 
-- refine the same spec while the work remains the same reviewable slice
-- create a new dated spec when the primary outcome, boundary, or validation path changes
-- split a spec when the work grows beyond one primary reviewable outcome
-- keep scope changes with the planner / specifier, not the executor
+Follow `docs/specs/README.md` for spec refinement, splitting, and lifecycle conventions.
+Keep scope changes with the planner / specifier, not the executor.
 
 ## Executor Mutation Limits
 
