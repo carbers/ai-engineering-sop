@@ -12,7 +12,7 @@ Use this skill by default when:
 - work is about to move into implementation
 - task boundaries, validation, or write-back needs are still implicit
 
-See `AGENTS.md` § Working model for when spec creation may be skipped.
+See `AGENTS.md` -> `Working model` for when spec creation may be skipped.
 
 ## Inputs
 - current plan or phase slice
@@ -22,14 +22,14 @@ See `AGENTS.md` § Working model for when spec creation may be skipped.
 - known reusable facts or golden cases
 
 ## Outputs
-- one or more task specs in `docs/specs/`
+- one or more task specs in `ai/doc/specs/`
 - clear in-scope / out-of-scope boundaries
 - affected area, status, short checklist, and reviewable done condition
 - black-box validation guidance
 - white-box trigger judgment
 - write-back guidance
 
-Name and store specs using the conventions in `docs/specs/README.md`.
+Name and store specs using the conventions in `ai/doc/specs/README.md`.
 
 ## Workflow
 

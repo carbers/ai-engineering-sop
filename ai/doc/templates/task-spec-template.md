@@ -1,7 +1,7 @@
 # Task SPEC Template
 
 Keep this document narrow. Reference the plan when needed instead of restating it.
-Store task specs in `docs/specs/` and name them `YYYYMMDD-NNN-task-slug.md`.
+Store task specs in `ai/doc/specs/` and name them `YYYYMMDD-NNN-task-slug.md`.
 
 ## Metadata
 

@@ -1,5 +1,8 @@
 # Skill Registry
 
+Keep this registry in sync with the files in `ai/skill/`.
+When adding, removing, or renaming a skill file, update this registry in the same change.
+
 | Name | Purpose | Trigger | Inputs | Outputs | Status |
 |---|---|---|---|---|---|
 | `plan-to-spec` | Convert a plan or phase slice into one or more narrow task specs | A plan or phase slice exists and work is about to move into implementation | plan or phase slice, current context, constraints, risks | one or more specs with scope, status, checklist, done condition, validation, write-back guidance | active |

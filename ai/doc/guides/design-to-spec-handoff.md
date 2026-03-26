@@ -73,7 +73,7 @@ When this happens, the planner / specifier should explicitly list the missing de
 
 ## Iteration Loop
 
-Follow `docs/specs/README.md` for spec refinement, splitting, and lifecycle conventions.
+Follow `ai/doc/specs/README.md` for spec refinement, splitting, and lifecycle conventions.
 Keep scope changes with the planner / specifier, not the executor.
 
 ## Executor Mutation Limits

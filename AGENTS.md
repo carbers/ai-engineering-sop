@@ -27,23 +27,42 @@ Use the repository layers as follows:
 - `CLAUDE.md`
   Lightweight adapter that defers to `AGENTS.md`.
 
+- `ai/README.md`
+  Namespace map for the `ai/` workflow namespace and its boundary rules.
+
 - `.cursor/rules/*`  
   Execution guardrails for Cursor.
 
-- `docs/guides/*`  
+- `ai/doc/guides/*`  
   Practical workflow guidance.
 
-- `docs/templates/*`  
+- `ai/doc/templates/*`  
   Reusable document skeletons used during work.
 
-- `docs/specs/*`
+- `ai/doc/specs/*`
   Task specs that bridge plans and implementation.
 
-- `docs/facts/*`  
+- `ai/doc/facts/*`  
   Stable context worth re-reading later.
 
-- `skills/*`  
+- `ai/skill/*`  
   Reusable workflows that reduce repeated cognitive work.
+
+`ai/` is reserved for AI-managed workflow assets.
+Project-facing documentation should live outside `ai/` in whatever structure the project uses for its own docs.
+The canonical namespace roots are singular: use `ai/doc` and `ai/skill`, not parallel roots such as `ai/docs` or `ai/skills`.
+
+## Entrypoint model
+
+- `README.md` is the human-facing and project-facing entrypoint.
+- `AGENTS.md` is the canonical AI-tool entrypoint.
+- Adapter files such as `CLAUDE.md` should defer to `AGENTS.md`.
+- `ai/README.md` documents the `ai/*` namespace after the AI tool has entered through its adapter or `AGENTS.md`.
+
+When this starter is copied into a real project:
+- let `README.md` become the project's human-facing README
+- keep `AGENTS.md` and any adapters as AI-tool entrypoints
+- keep `ai/README.md` as the namespace map for AI workflow assets
 
 ## Working model
 
@@ -58,7 +77,7 @@ Follow this operating sequence by default:
 
 When a plan or phase slice exists, the default execution path is `plan -> one or more task specs -> implementation -> validation`.
 A plan may come from an interactive planning session or a written plan document.
-Use `docs/templates/plan-template.md` only when the plan should become a durable repo artifact worth re-reading, sharing, or handing off.
+Use `ai/doc/templates/plan-template.md` only when the plan should become a durable repo artifact worth re-reading, sharing, or handing off.
 Plans may remain temporary. The task spec is the default durable execution artifact for implementation and iteration.
 If iterating within the same reviewable slice, refine the existing spec.
 If the primary outcome, boundary, or validation path changes, create a new dated spec first.
@@ -89,9 +108,11 @@ Good write-back targets include:
 
 Route write-back to the right layer:
 
-- `docs/facts/*` for stable reusable project context
-- `skills/*` for repeatable workflows
+- `ai/doc/facts/*` for stable reusable project context
+- `ai/skill/*` for repeatable workflows
 - `AGENTS.md` or `.cursor/rules/*` only for repository-wide operating guidance
+
+When adding, removing, or renaming fact files, keep `ai/doc/facts/facts-index.md` in sync.
 
 Do not write back:
 
@@ -112,7 +133,7 @@ Facts are stable context, not an archive.
 
 ## Skill promotion rule
 
-Promote a workflow into `skills/*` when:
+Promote a workflow into `ai/skill/*` when:
 
 - it repeats across tasks
 - its inputs and outputs are recognizable
@@ -121,6 +142,7 @@ Promote a workflow into `skills/*` when:
 - it can be described clearly enough to reuse
 
 Do not create a new skill for every useful prompt.
+When adding, removing, or renaming skills, keep `ai/skill/skill-registry.md` in sync.
 
 ## Validation expectations
 

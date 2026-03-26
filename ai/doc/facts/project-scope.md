@@ -24,6 +24,7 @@ Refine and maintain a practical, reusable SOP starter for AI-assisted engineerin
 - must remain technology-agnostic
 - must stay lightweight enough to copy into real projects
 - must separate rules, templates, facts, and skills clearly
+- must keep AI-managed workflow assets separate from project-facing documentation
 
 ## Current Assumptions
 - a plan-first workflow is central

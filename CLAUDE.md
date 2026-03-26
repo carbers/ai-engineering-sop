@@ -4,8 +4,9 @@ This repository uses `AGENTS.md` as the canonical source of repository-level gui
 
 ## Source of truth
 
-- Follow `AGENTS.md` for repository-level behavior.
-- Follow `.cursor/rules/*`, `docs/*`, and `skills/*` as referenced by `AGENTS.md`.
+- Use `AGENTS.md` as the primary AI-tool entrypoint for repository-level behavior.
+- Use `ai/README.md` for the `ai/*` namespace map and boundary rules.
+- Follow `.cursor/rules/*`, `ai/doc/*`, and `ai/skill/*` as referenced by `AGENTS.md`.
 - If `CLAUDE.md` and `AGENTS.md` differ, `AGENTS.md` wins.
 
 This file is an adapter entry point, not a second rule system.

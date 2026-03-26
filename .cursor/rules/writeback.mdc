@@ -21,10 +21,13 @@ If the answer is not clearly yes, do not write it back.
 - a repeated procedure should become or update a skill
 
 ## Write back to
-- `docs/facts/*` for stable project context
-- `skills/*` for reusable procedures
+- `ai/doc/facts/*` for stable project context
+- `ai/skill/*` for reusable procedures
 - `AGENTS.md` or rules only for repository-wide guidance
 - change summaries for task-local delivery notes
+
+When adding, removing, or renaming fact files, update `ai/doc/facts/facts-index.md`.
+When adding, removing, or renaming skill files, update `ai/skill/skill-registry.md`.
 
 ## Do not write back
 - temporary debugging notes

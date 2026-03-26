@@ -2,6 +2,15 @@
 
 Use this SOP when starting a new project or when introducing structure into an existing project.
 
+## Entrypoints In Copied Projects
+
+When this starter is copied into a real project, keep the entrypoints split:
+
+- let the root `README.md` become the human-facing project entrypoint
+- keep `AGENTS.md` and any tool adapters as AI-tool entrypoints
+- keep `ai/README.md` as the namespace map for AI workflow assets
+- keep project-facing docs outside `ai/`
+
 ## Default startup order
 
 1. clarify the project at a plan level
@@ -24,7 +33,7 @@ Before coding, clarify:
 ### 2. Establish the first plan
 First establish the plan in the planning workflow you actually use.
 A written plan document is optional.
-Use `docs/templates/plan-template.md` only when the plan should become a durable repo artifact worth re-reading, sharing, or handing off.
+Use `ai/doc/templates/plan-template.md` only when the plan should become a durable repo artifact worth re-reading, sharing, or handing off.
 By default, persist the task spec rather than the plan.
 
 The plan should clarify:
@@ -40,10 +49,10 @@ If the plan is already clear from an interactive planning session, move directly
 Do not force a second written plan unless it adds durable value.
 
 ### 3. Derive task specs
-Use `skills/plan-to-spec.md`, `docs/specs/README.md`, and `docs/templates/task-spec-template.md`.
+Use `ai/skill/plan-to-spec.md`, `ai/doc/specs/README.md`, and `ai/doc/templates/task-spec-template.md`.
 
 A task spec should shrink the plan into a narrow implementation contract.
-See `docs/specs/README.md` for naming, splitting, and lifecycle conventions.
+See `ai/doc/specs/README.md` for naming, splitting, and lifecycle conventions.
 
 ### 4. Decide starter/code skeleton work deliberately
 Project starter work is a result of planning, not a global precondition.
@@ -54,13 +63,13 @@ Only define code skeleton and starter structure after the plan has made the curr
 - use black-box validation by default
 - add white-box validation when triggered by internal complexity or regression sensitivity
 
-See `docs/guides/testing-strategy.md`.
+See `ai/doc/guides/testing-strategy.md`.
 
 ### 6. Write back stable facts
 After implementation and validation, create or update:
 
-- `docs/facts/project-scope.md` when scope or boundaries became clearer
-- `docs/facts/golden-cases.md` when stable reusable validation references are worth preserving
+- `ai/doc/facts/project-scope.md` when scope or boundaries became clearer
+- `ai/doc/facts/golden-cases.md` when stable reusable validation references are worth preserving
 
 Write back only stable, reusable context.
 Do not turn every task discussion into permanent docs.
@@ -74,7 +83,7 @@ The goal is one or more small specs, not one large spec.
 
 ## Multi-Model Collaboration Variant
 
-If design discussion, planning, spec derivation, and execution are split across different tools or different people, use `docs/guides/design-to-spec-handoff.md`.
+If design discussion, planning, spec derivation, and execution are split across different tools or different people, use `ai/doc/guides/design-to-spec-handoff.md`.
 
 That guide is an extension of this SOP, not a replacement for it.
 The same core rule still applies: implementation should run from a clear task spec, not directly from a broad design discussion or a broad plan.

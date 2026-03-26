@@ -6,7 +6,7 @@ alwaysApply: true
 # Workflow Rule
 
 - Start from a plan, an existing task spec, or a clearly scoped task request.
-- If a plan or phase slice exists, derive or refine one or more task specs before editing. Use `skills/plan-to-spec.md` by default.
+- If a plan or phase slice exists, derive or refine one or more task specs before editing. Use `ai/skill/plan-to-spec.md` by default.
 - Do not require a separate written plan document when the plan is already clear enough to derive specs.
 - If iterating within the same reviewable slice, refine the existing spec instead of creating parallel docs.
 - If the primary outcome, boundary, or validation path changes, create a new dated spec before editing.

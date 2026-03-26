@@ -4,7 +4,7 @@ Task specs are the default execution artifact between planning and implementatio
 
 ## Purpose
 
-Use `docs/specs/*` to hold narrow task specs that:
+Use `ai/doc/specs/*` to hold narrow task specs that:
 - bridge plans and implementation
 - keep execution reviewable
 - stay small enough to refine during iteration
@@ -20,7 +20,7 @@ See `20260101-001-example-api-rate-limiting.md` for a concrete example of a fill
 
 Store each spec as:
 
-`docs/specs/YYYYMMDD-NNN-task-slug.md`
+`ai/doc/specs/YYYYMMDD-NNN-task-slug.md`
 
 - `YYYYMMDD` is the spec creation date
 - `NNN` is the same-day sequence, starting at `001`
@@ -30,7 +30,7 @@ Store each spec as:
 
 Example:
 
-`docs/specs/20260322-001-auth-session-hardening.md`
+`ai/doc/specs/20260322-001-auth-session-hardening.md`
 
 ## Create Or Refine
 

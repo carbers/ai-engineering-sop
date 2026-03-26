@@ -35,3 +35,7 @@ Do not put these into facts:
 ## Routing rule
 
 Follow the write-back policy in `AGENTS.md` before adding content here.
+
+## Maintenance rule
+
+When adding, removing, or renaming fact files in this directory, update this index in the same change.
