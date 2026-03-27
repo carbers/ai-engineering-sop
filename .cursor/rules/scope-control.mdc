@@ -11,3 +11,4 @@ alwaysApply: true
 - Keep the review surface small.
 - If multiple implementation paths exist, choose the smallest one that fits the current phase.
 - If the task becomes broader while working, stop and narrow it again.
+- If narrowing the task would require changing the current spec boundary, project scope, or phase boundary, stop for `replan_required` or `needs_decision` instead of quietly redefining the task.

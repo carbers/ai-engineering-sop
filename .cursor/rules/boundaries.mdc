@@ -9,6 +9,8 @@ alwaysApply: true
 - Do not perform opportunistic refactors.
 - Do not edit unrelated modules in the same task unless required for compilation or contract alignment.
 - Do not implement future-phase work during current-phase tasks.
+- If task or sub-plan execution would expand project scope or phase scope, stop for an explicit replan or decision instead of absorbing the work into the current slice.
+- If missing policy, dependency, or priority choices appear, return `needs_decision` or `replan_required` instead of inventing them locally.
 - Prefer existing structures over creating parallel systems.
 - Narrow ambiguous work instead of expanding design scope.
 - Keep AI-managed workflow assets under `ai/`.
