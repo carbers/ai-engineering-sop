@@ -2,6 +2,21 @@
 
 Use this SOP when starting a new project or when introducing structure into an existing project.
 
+## First Use In A Copied Project
+
+Use this as the copied-project quickstart:
+
+1. keep the entrypoints split: root `README.md` for humans, `AGENTS.md` and adapters for AI tools, `ai/README.md` for the `ai/*` namespace
+2. keep the minimal starter set from `README.md`
+3. decide whether the first slice is a default `small task` or a `phase-aware` long task
+4. clarify the first reviewable slice in the planning workflow you already use
+5. write a durable plan only if the current phase or handoff structure is worth re-reading later
+6. derive the first narrow task spec before implementation
+7. validate explicitly and write back only stable reusable context
+
+The starter should stay lightweight on day one.
+Do not create every optional artifact up front.
+
 ## Entrypoints In Copied Projects
 
 When this starter is copied into a real project, keep the entrypoints split:
@@ -22,6 +37,34 @@ When this starter is copied into a real project, keep the entrypoints split:
 
 The default path stays lightweight.
 Only move into the phase-aware variant when the work is long-running enough to need explicit phase, plan, and task hierarchy.
+If you want to see one complete long-task chain before copying the pattern, read `ai/doc/guides/phase-aware-canonical-example.md`.
+
+## What To Keep On Day One
+
+The smallest practical copied-project set is:
+
+- `AGENTS.md`
+- `ai/README.md`
+- `.cursor/rules/*`
+- `ai/doc/templates/*`
+- `ai/doc/specs/README.md`
+- `ai/doc/facts/facts-index.md`
+- `ai/skill/plan-to-spec.md`
+- `ai/skill/design-whitebox-tests.md`
+
+Add more files only when they solve a real current need.
+
+If you want the guided first-use path to remain available after copying, also keep:
+
+- `ai/doc/guides/new-project-sop.md`
+- `ai/doc/guides/testing-strategy.md`
+- `ai/doc/guides/task-lifecycle-and-escalation.md`
+- `ai/doc/specs/20260104-001-example-first-copied-project-quickstart.md`
+- `ai/doc/guides/phase-aware-workflow.md` when long-task guidance is needed
+- `ai/doc/guides/phase-aware-canonical-example.md`
+- `ai/doc/guides/phase-aware-example-main-plan.md`
+- `ai/doc/guides/phase-aware-example-sub-plan.md`
+- `ai/doc/specs/20260103-001-example-adoption-entrypoint-slice.md`
 
 ## Startup checklist
 
@@ -39,6 +82,15 @@ A written plan document is optional.
 Use `ai/doc/templates/plan-template.md` only when the plan should become a durable repo artifact worth re-reading, sharing, or handing off.
 By default, persist the task spec rather than the plan.
 
+Use a durable written plan when one or more of these are true:
+- the current phase needs checkpoints, dependencies, or handoff context that should survive later re-reading
+- multiple people or models need to align on the same phase slice
+- the work is long-running enough that the next task is not obvious without the parent plan
+
+Skip the durable plan when:
+- the first slice is already clear enough to narrow directly into one reviewable spec
+- writing the plan would only restate what the current task request already says
+
 The plan should clarify:
 - problem
 - goal
@@ -53,6 +105,8 @@ Do not force a second written plan unless it adds durable value.
 
 When the work spans multiple milestones, dependencies, or long-lived handoffs, use the phase-aware guidance in `ai/doc/guides/phase-aware-workflow.md`.
 That guide explains how to keep `project_target`, `current_target`, `phase`, `main_plan`, `sub_plan`, and `task` aligned without replacing the default spec-first workflow.
+Use `ai/doc/guides/phase-aware-canonical-example.md` when you want a compact, copyable example of that chain.
+If you keep the guided first-use files, that example also links to concrete `main_plan` and `sub_plan` artifacts you can copy directly.
 
 ### 3. Derive task specs
 Use `ai/skill/plan-to-spec.md`, `ai/doc/specs/README.md`, and `ai/doc/templates/task-spec-template.md`.
@@ -60,6 +114,13 @@ Use `ai/skill/plan-to-spec.md`, `ai/doc/specs/README.md`, and `ai/doc/templates/
 A task spec should shrink the plan into a narrow implementation contract.
 See `ai/doc/specs/README.md` for naming, splitting, and lifecycle conventions.
 For longer-running work, also use `ai/doc/guides/task-lifecycle-and-escalation.md` so repair, rollback, replan, and escalation stay explicit.
+
+For the first copied-project slice:
+- start with one spec, not a batch of specs
+- make the first spec small enough to review in one pass
+- use the phase-aware fields only when they make the current slice easier to hand off or recover
+
+If you want a copyable default-path example, see `ai/doc/specs/20260104-001-example-first-copied-project-quickstart.md`.
 
 ### 4. Decide starter/code skeleton work deliberately
 Project starter work is a result of planning, not a global precondition.
@@ -72,6 +133,11 @@ Only define code skeleton and starter structure after the plan has made the curr
 
 See `ai/doc/guides/testing-strategy.md`.
 
+For the first copied-project slice, prefer validation that a reviewer can quickly inspect:
+- what user-visible behavior changed
+- what check proves the slice is done
+- whether any internal regression path also needs protection
+
 ### 6. Write back stable facts
 After implementation and validation, create or update:
 
@@ -80,6 +146,9 @@ After implementation and validation, create or update:
 
 Write back only stable, reusable context.
 Do not turn every task discussion into permanent docs.
+
+For the first copied-project slice, write back only when something became stable enough to help the next task.
+If nothing stable emerged, skip write-back.
 
 ## Practical note
 

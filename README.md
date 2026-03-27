@@ -4,6 +4,16 @@ A lightweight, tool-neutral SOP starter for AI-assisted engineering.
 
 Use this repository when you want a project to move from planning to narrow execution without losing control of scope, validation, facts, or reusable workflows. It is intentionally not tied to a specific stack, app type, or framework.
 
+## Choose Your Path
+
+- `Small task / narrow change`
+  Stay on the default lightweight path when the next slice is already clear and reviewable. Start with the [specs guide](ai/doc/specs/README.md) and the [task spec template](ai/doc/templates/task-spec-template.md).
+
+- `Long task / multi-phase / multi-handoff`
+  Use the phase-aware variant when the work needs explicit phase, plan, handoff, or failure-boundary structure. Start with the [phase-aware workflow guide](ai/doc/guides/phase-aware-workflow.md) and the [canonical example](ai/doc/guides/phase-aware-canonical-example.md).
+
+Both paths still converge on one or more narrow task specs before implementation.
+
 ## What this repository is for
 
 This starter is for teams that want a practical default workflow for:
@@ -107,6 +117,27 @@ The smallest practical starting point is:
 7. keep the two initial skills: `ai/skill/plan-to-spec.md` and `ai/skill/design-whitebox-tests.md`
 8. create a first plan in your planning workflow, then initialize `ai/doc/facts/project-scope.md` when stable scope is clear
 
+That list is the bare minimum.
+If you want the guided first-use path to remain available after copying, also keep:
+
+- `ai/doc/guides/new-project-sop.md`
+- `ai/doc/guides/testing-strategy.md`
+- `ai/doc/guides/task-lifecycle-and-escalation.md`
+- `ai/doc/specs/20260104-001-example-first-copied-project-quickstart.md` when you want the small-task example
+- `ai/doc/guides/phase-aware-workflow.md` when long-task guidance is needed
+- `ai/doc/guides/phase-aware-canonical-example.md`, `ai/doc/guides/phase-aware-example-main-plan.md`, `ai/doc/guides/phase-aware-example-sub-plan.md`, and `ai/doc/specs/20260103-001-example-adoption-entrypoint-slice.md` when you want the closed long-task example
+
+## Copy Into A Real Project In 10 Minutes
+
+1. Copy the minimal adoption set into the real project. If you want this guided walkthrough to remain available inside the copied project, also copy the guided first-use files listed above. Keep the split entrypoints: root `README.md` for humans, `AGENTS.md` for AI tools, and `ai/README.md` for the `ai/*` namespace.
+2. Decide whether the first slice is a `small task / narrow change` or a `long task / multi-phase / multi-handoff`.
+3. Clarify the first reviewable slice in your normal planning workflow.
+4. Persist a written plan only if the phase, handoff, or checkpoint structure is worth re-reading later. Otherwise move directly to the first spec.
+5. Derive the first task spec with the [specs guide](ai/doc/specs/README.md) and the [task spec template](ai/doc/templates/task-spec-template.md).
+6. Implement from the spec, validate explicitly, and write back only stable reusable context.
+
+If you want the copied-project walkthrough, read the [new-project SOP guide](ai/doc/guides/new-project-sop.md).
+
 ## What this repository is not
 
 This repository is not:
@@ -122,13 +153,21 @@ This repository is not:
 
 1. read `AGENTS.md`
 2. if you are wiring AI workflow assets, read `ai/README.md`
-3. read `ai/doc/guides/new-project-sop.md`
-4. read `ai/doc/specs/README.md`
-5. create or refine a first plan, using `ai/doc/templates/plan-template.md` only when you want a durable written plan
-6. initialize `ai/doc/facts/project-scope.md` when stable scope is clear
+3. for a first copied-project run, read `ai/doc/guides/new-project-sop.md`
+4. for the default lightweight path, read `ai/doc/specs/README.md`
+5. for the phase-aware long-task path, read `ai/doc/guides/phase-aware-workflow.md` and `ai/doc/guides/phase-aware-canonical-example.md`
+6. create or refine a first plan, using `ai/doc/templates/plan-template.md` only when you want a durable written plan
+7. initialize `ai/doc/facts/project-scope.md` when stable scope is clear
 
 When design, planning, and execution are split across different tools or roles, also see `ai/doc/guides/design-to-spec-handoff.md` and the prompt scaffolds in `ai/doc/templates/design-to-planner-prompt-template.md` and `ai/doc/templates/spec-to-executor-prompt-template.md`.
 
+## What's New In 0.3.0
+
+- the homepage now splits the default `small task` path from the `long task` phase-aware path
+- copied-project adoption now has a faster first-use route in `README.md` and `ai/doc/guides/new-project-sop.md`
+- both paths now have copyable examples: a closed phase-aware chain and a first-use small-task spec
+- task status and escalation wording are now aligned across the specs guide, lifecycle guide, and task spec template
+
 ---
 
-**SOP Starter Version**: 0.2.0 - 2026-03-22
+**SOP Starter Version**: 0.3.0 - 2026-03-27

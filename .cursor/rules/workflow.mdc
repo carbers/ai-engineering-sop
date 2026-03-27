@@ -7,7 +7,8 @@ alwaysApply: true
 
 - Start from a plan, an existing task spec, or a clearly scoped task request.
 - If a plan or phase slice exists, derive or refine one or more task specs before editing. Use `ai/skill/plan-to-spec.md` by default.
-- When work spans multiple phases or long-running slices, keep the hierarchy explicit as `project_target -> current_target -> phase -> plan -> task`.
+- When work spans multiple phases or long-running slices, keep the hierarchy explicit as `project_target -> current_target -> phase -> plan -> task`, using `main_plan` and optional `sub_plan` only when that distinction adds clarity.
+- If the next slice is already narrow and reviewable, stay on the default lightweight path instead of introducing extra phase-aware structure.
 - Do not require a separate written plan document when the plan is already clear enough to derive specs.
 - If iterating within the same reviewable slice, refine the existing spec instead of creating parallel docs.
 - If the primary outcome, boundary, or validation path changes, create a new dated spec before editing.

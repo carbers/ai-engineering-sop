@@ -5,6 +5,21 @@ Use this guide when the default lightweight workflow needs a little more structu
 This is an extension of the repository's existing SOP, not a replacement for it.
 The core path remains `plan -> one or more narrow task specs -> implementation -> validation`.
 
+## Decision Card
+
+Stay on the default lightweight path when:
+- the next slice is already one clear reviewable task
+- phase, checkpoint, or handoff context does not need to stay visible in the spec
+- repair, rollback, or escalation boundaries can stay implicit
+
+Move into the phase-aware variant when:
+- the work spans multiple phases, checkpoints, or handoffs
+- `project_target`, `current_target`, or current `phase` must stay visible across tasks
+- `main_plan` and optional `sub_plan` views help keep sequencing or ownership clear
+- repair, rollback, replan, or escalation conditions should be explicit before execution starts
+
+See `ai/doc/guides/phase-aware-canonical-example.md` for one closed example chain.
+
 ## When To Use It
 
 Use the phase-aware variant when one or more of these are true:
@@ -29,8 +44,8 @@ Use these terms consistently:
 - `sub_plan`: the plan for task decomposition, ordering, validation flow, or failure handling inside the current phase
 - `task`: the smallest reviewable execution slice, usually carried by a task spec
 
-Future runtime can consume this hierarchy as a static anchor for long-running work.
-It does not tell runtime how to schedule or automate tasks; it only makes the parent-child relationships explicit.
+This hierarchy is static planning structure only.
+It does not tell tools how to schedule or automate tasks; it only makes the parent-child relationships explicit.
 
 ## Phase Model
 
@@ -85,7 +100,7 @@ When failure handling or handoff risk is high, also make these explicit in the t
 - `Rollback Scope`
 - `Escalation Condition`
 
-Future runtime can use these fields to recover task context, boundaries, and safe fallback surfaces without needing the whole planning conversation.
+These fields keep the task context, boundaries, and fallback surfaces readable without needing the whole planning conversation.
 
 ## What Stays The Same
 

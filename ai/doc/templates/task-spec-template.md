@@ -18,7 +18,7 @@ Optional for phase-aware or long-running work.
 Which `main_plan` or `sub_plan` is this task executing?
 
 ### Status
-Choose one:
+Choose one steady-state status:
 - `draft`: the spec exists, but it is not ready for implementation yet
 - `todo`: the spec is ready to start, but implementation has not begun
 - `in_progress`: implementation for this spec has started
@@ -27,6 +27,9 @@ Choose one:
 - `rolled_back`: the task's in-scope changes were reverted inside the declared rollback scope
 - `blocked`: progress is waiting on a prerequisite, dependency, or decision
 - `done`: `Done When` is satisfied and required validation has passed
+
+Do not put `needs_decision` or `replan_required` in `Status`.
+If the task stops for escalation, keep `Status` on the last accurate steady-state value and record the escalation outcome under `Risks / Notes` or in the handoff report.
 
 ### Related Specs
 Optional. Link sibling, prerequisite, or follow-up specs when that helps navigation.

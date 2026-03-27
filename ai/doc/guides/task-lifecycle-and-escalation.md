@@ -5,9 +5,9 @@ Use this guide when a task needs explicit lifecycle, repair, rollback, or escala
 This guide keeps failure handling readable in SOP form.
 It does not define an automated runtime state machine.
 
-## Canonical Status Values
+## Steady-State Status Values
 
-Use these status values for new or materially revised task specs:
+Use only these values in a task spec's `Status` field for new or materially revised specs:
 
 - `draft`: the task is defined, but implementation should not start yet
 - `todo`: the task is defined and ready to start
@@ -29,6 +29,7 @@ Use these as explicit outcomes when the task should stop instead of stretching i
 - `needs_decision`: a scope, priority, dependency, or policy choice must be made above the executor level
 
 These are escalation results, not steady-state progress values.
+If a task stops for one of these reasons, keep `Status` on the last accurate steady-state value and record the escalation outcome in task-local notes or the handoff report.
 
 ## Repair vs Rollback vs Replan vs Escalate
 
@@ -51,7 +52,7 @@ Use these default interpretations:
 - any active state -> `replan_required` when the spec boundary, sequencing, or assumptions are no longer valid
 
 These transitions are guidance for human and AI operators.
-They are not pseudocode for a workflow engine.
+They describe movement between steady-state status values and explicit stop outcomes; they are not pseudocode for a workflow engine.
 
 ## Common Triggers
 

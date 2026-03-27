@@ -19,6 +19,11 @@ See these examples:
 
 - `20260101-001-example-api-rate-limiting.md` for a classic narrow implementation spec
 - `20260102-001-example-phase-aware-guide-slice.md` for thin use of the phase-aware fields
+- `20260103-001-example-adoption-entrypoint-slice.md` for one complete phase-aware task slice inside a longer chain
+- `20260104-001-example-first-copied-project-quickstart.md` for a first-use small-task spec on the default lightweight path
+
+See `ai/doc/guides/phase-aware-canonical-example.md` for a closed long-task example that links `project_target -> current_target -> phase -> main_plan -> sub_plan -> task -> validation -> write-back`.
+If you want the matching small-task reference, start with `20260104-001-example-first-copied-project-quickstart.md`.
 
 ## Naming
 
@@ -56,7 +61,7 @@ Split a spec when it would contain:
 
 ## Status
 
-Use one of these status values:
+Use only these steady-state values in the spec's `Status` field:
 
 - `draft`: the spec exists, but implementation should not start yet
 - `todo`: the spec is ready to start, but implementation has not begun
@@ -71,6 +76,7 @@ Checklist completion alone does not make a spec `done`.
 Required validation must also pass.
 
 Treat `replan_required` and `needs_decision` as escalation outcomes, not normal steady-state status values.
+If a task stops for escalation, keep `Status` on the last accurate steady-state value and record the escalation outcome in `Risks / Notes` or the execution handoff.
 If they occur, return to the planning or decision layer instead of stretching the current spec.
 
 Older specs may still use `in-progress`.
