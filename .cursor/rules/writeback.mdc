@@ -26,6 +26,9 @@ If the answer is not clearly yes, do not write it back.
 - `AGENTS.md` or rules only for repository-wide guidance
 - change summaries for task-local delivery notes
 
+Use write-back labels such as `facts_update`, `skill_promotion`, `decision_rationale`, `phase_lesson`, `task_pattern`, and `anti_pattern` only as routing hints.
+Do not let the taxonomy create a new archive of task history.
+
 When adding, removing, or renaming fact files, update `ai/doc/facts/facts-index.md`.
 When adding, removing, or renaming skill files, update `ai/skill/skill-registry.md`.
 

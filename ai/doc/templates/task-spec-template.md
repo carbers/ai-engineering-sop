@@ -2,16 +2,29 @@
 
 Keep this document narrow. Reference the plan when needed instead of restating it.
 Store task specs in `ai/doc/specs/` and name them `YYYYMMDD-NNN-task-slug.md`.
+For trivially narrow work, phase-aware fields may stay short or be omitted when the parent context is already obvious.
 
 ## Metadata
 
 ### Source Plan / Request
 Which plan, phase slice, or directly scoped task request does this spec narrow?
 
+### Parent Phase
+Optional for phase-aware or long-running work.
+Which current phase does this task belong to?
+
+### Parent Plan
+Optional for phase-aware or long-running work.
+Which `main_plan` or `sub_plan` is this task executing?
+
 ### Status
 Choose one:
-- `draft`: the spec exists, but implementation should not start yet
-- `in-progress`: implementation for this spec has started
+- `draft`: the spec exists, but it is not ready for implementation yet
+- `todo`: the spec is ready to start, but implementation has not begun
+- `in_progress`: implementation for this spec has started
+- `validating`: implementation is complete enough for required validation to run
+- `repairing`: validation exposed a fixable gap and the task is still inside its current repair budget
+- `rolled_back`: the task's in-scope changes were reverted inside the declared rollback scope
 - `blocked`: progress is waiting on a prerequisite, dependency, or decision
 - `done`: `Done When` is satisfied and required validation has passed
 
@@ -21,11 +34,31 @@ Optional. Link sibling, prerequisite, or follow-up specs when that helps navigat
 ## Goal
 What should this task accomplish?
 
+## Phase-Aware Contract
+Use the fields below when the task needs explicit parent mapping, handoff boundaries, or failure handling.
+For small tasks, keep them terse or remove sections that add no clarity.
+
+## Inputs
+Optional for phase-aware, dependency-heavy, or multi-handoff work.
+What existing artifacts, dependencies, assumptions, or repo context must already be available?
+
+## Expected Outputs
+Optional for phase-aware, dependency-heavy, or multi-handoff work.
+What concrete deliverables should this task produce?
+
 ## In Scope
 What is included in this task?
 
 ## Out of Scope
 What is explicitly excluded from this task?
+
+## Allowed Edits
+Optional for phase-aware, dependency-heavy, or multi-handoff work.
+Which files, modules, docs, or workflow assets may be edited in this task?
+
+## Disallowed Edits
+Optional for phase-aware, dependency-heavy, or multi-handoff work.
+Which areas must remain untouched unless the task is explicitly replanned?
 
 ## Affected Area
 Which files, modules, or subsystems should be touched?
@@ -54,10 +87,30 @@ Why is white-box validation needed or not needed?
 ### Internal Logic To Protect
 If yes, which branch, state, contract, or regression path matters most?
 
+## Repair / Rollback
+Use this section when the task needs explicit repair, rollback, or escalation boundaries.
+For small low-risk tasks, keep it short or omit it.
+
+### Repair Budget
+How much repair is allowed after validation fails before the task must stop for rollback, replan, or escalation?
+
+### Rollback Scope
+Which in-scope changes may be reverted if repair is exhausted or the task must be abandoned?
+
+### Escalation Condition
+When should this task stop and return as `needs_decision` or `replan_required` instead of continuing?
+
 ## Write-back Needed
 Yes / No
 
-If yes, what stable information should be written back, and where does it belong?
+If yes, what stable information should be written back, where does it belong, and which type best fits?
+Suggested labels:
+- `facts_update`
+- `skill_promotion`
+- `decision_rationale`
+- `phase_lesson`
+- `task_pattern`
+- `anti_pattern`
 
 ## Risks / Notes
 What should reviewers or implementers watch for?

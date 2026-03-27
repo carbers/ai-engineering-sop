@@ -20,6 +20,9 @@ When this starter is copied into a real project, keep the entrypoints split:
 5. write back stable facts
 6. promote repeatable workflows into skills when justified
 
+The default path stays lightweight.
+Only move into the phase-aware variant when the work is long-running enough to need explicit phase, plan, and task hierarchy.
+
 ## Startup checklist
 
 ### 1. Establish the current phase
@@ -48,11 +51,15 @@ The plan should clarify:
 If the plan is already clear from an interactive planning session, move directly to spec derivation.
 Do not force a second written plan unless it adds durable value.
 
+When the work spans multiple milestones, dependencies, or long-lived handoffs, use the phase-aware guidance in `ai/doc/guides/phase-aware-workflow.md`.
+That guide explains how to keep `project_target`, `current_target`, `phase`, `main_plan`, `sub_plan`, and `task` aligned without replacing the default spec-first workflow.
+
 ### 3. Derive task specs
 Use `ai/skill/plan-to-spec.md`, `ai/doc/specs/README.md`, and `ai/doc/templates/task-spec-template.md`.
 
 A task spec should shrink the plan into a narrow implementation contract.
 See `ai/doc/specs/README.md` for naming, splitting, and lifecycle conventions.
+For longer-running work, also use `ai/doc/guides/task-lifecycle-and-escalation.md` so repair, rollback, replan, and escalation stay explicit.
 
 ### 4. Decide starter/code skeleton work deliberately
 Project starter work is a result of planning, not a global precondition.
@@ -80,6 +87,19 @@ This SOP is intended to remain lightweight.
 The goal is not to create many documents.  
 The goal is to create enough structure that implementation stays controlled, reviewable, and reusable.  
 The goal is one or more small specs, not one large spec.
+
+## When To Use The Phase-Aware Variant
+
+Use the phase-aware variant when one or more of these are true:
+
+- the work spans multiple phases or checkpoints
+- a `main_plan` and one or more `sub_plan` views are both useful
+- task ordering, dependency handling, or failure handling must be made explicit
+- multiple people or models will hand the work across boundaries
+- repair, rollback, replan, or escalation paths need to be reviewable
+
+Do not use the phase-aware variant for every small task.
+If a narrow task request is already clear and reviewable, stay on the default lightweight path.
 
 ## Multi-Model Collaboration Variant
 

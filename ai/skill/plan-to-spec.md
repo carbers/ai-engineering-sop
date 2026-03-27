@@ -21,6 +21,12 @@ See `AGENTS.md` -> `Working model` for when spec creation may be skipped.
 - known risks
 - known reusable facts or golden cases
 
+When the work is phase-aware, also capture:
+- `project_target`
+- `current_target`
+- current `phase`
+- whether the plan is acting as a `main_plan` or `sub_plan`
+
 ## Outputs
 - one or more task specs in `ai/doc/specs/`
 - clear in-scope / out-of-scope boundaries
@@ -29,12 +35,23 @@ See `AGENTS.md` -> `Working model` for when spec creation may be skipped.
 - white-box trigger judgment
 - write-back guidance
 
+For longer-running or dependency-heavy work, also make explicit:
+- `Parent Phase`
+- `Parent Plan`
+- `Inputs`
+- `Expected Outputs`
+- `Allowed Edits` / `Disallowed Edits`
+- `Repair Budget`
+- `Rollback Scope`
+- `Escalation Condition`
+
 Name and store specs using the conventions in `ai/doc/specs/README.md`.
 
 ## Workflow
 
 ### 1. Start from the current slice
 Turn broad plan statements into the next smallest reviewable slice or slices that still move the phase forward.
+If the work is phase-aware, make sure the slice still maps cleanly back to the current phase and parent plan.
 
 ### 2. One spec, one primary outcome
 A spec should produce one primary reviewable outcome.
@@ -51,7 +68,7 @@ Split when the work would contain:
 Each task spec should say what is in scope, what is out of scope, what area is affected, and what must be true when the task is done.
 
 ### 5. Add lightweight execution state
-Each task spec should have a status (`draft`, `in-progress`, `blocked`, `done`) and a short Markdown checklist.
+Each task spec should have a status (`draft`, `todo`, `in_progress`, `validating`, `repairing`, `rolled_back`, `blocked`, `done`) and a short Markdown checklist.
 Checklist completion alone does not make the spec `done`; required validation must also pass.
 
 ### 6. Make validation explicit
@@ -65,13 +82,20 @@ Trigger white-box guidance when internal logic is branch-heavy, stateful, regres
 Only mark write-back as needed when the task is expected to clarify stable, reusable context.
 If write-back is needed, name the destination.
 
+### 9. Add failure boundaries only when they help
+For long-running, dependency-heavy, or repair-sensitive work, specify repair budget, rollback scope, and escalation conditions.
+Keep these fields short on trivially narrow tasks.
+
 ## Common failure modes
 - turning the plan directly into one giant spec
 - copying plan text into the task spec without narrowing it
 - keeping multiple primary outcomes in the same spec
+- losing the parent phase or parent plan mapping on longer work
 - leaving validation vague
 - omitting out-of-scope boundaries
+- omitting allowed edit boundaries when handoff risk is high
 - leaving the affected area or done condition implicit
 - leaving status implicit or never updating it
 - using the checklist as a work log or full project board
+- continuing to repair after the spec should have been replanned or escalated
 - writing back too much task-local detail

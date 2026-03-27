@@ -1,6 +1,7 @@
 # Specs Directory
 
 Task specs are the default execution artifact between planning and implementation.
+That remains true even when longer work is tracked with explicit phases, main plans, or sub-plans.
 
 ## Purpose
 
@@ -14,7 +15,10 @@ Use filenames plus optional `Related Specs` links for navigation.
 
 ## Example
 
-See `20260101-001-example-api-rate-limiting.md` for a concrete example of a filled-in task spec.
+See these examples:
+
+- `20260101-001-example-api-rate-limiting.md` for a classic narrow implementation spec
+- `20260102-001-example-phase-aware-guide-slice.md` for thin use of the phase-aware fields
 
 ## Naming
 
@@ -55,12 +59,40 @@ Split a spec when it would contain:
 Use one of these status values:
 
 - `draft`: the spec exists, but implementation should not start yet
-- `in-progress`: implementation for this spec has started
+- `todo`: the spec is ready to start, but implementation has not begun
+- `in_progress`: implementation for this spec has started
+- `validating`: implementation is complete enough for required validation to run
+- `repairing`: validation exposed a fixable gap and the task is still inside its current repair budget
+- `rolled_back`: the task's in-scope changes were reverted inside the declared rollback scope
 - `blocked`: progress is waiting on a prerequisite, dependency, or decision
 - `done`: `Done When` is satisfied and required validation has passed
 
 Checklist completion alone does not make a spec `done`.
 Required validation must also pass.
+
+Treat `replan_required` and `needs_decision` as escalation outcomes, not normal steady-state status values.
+If they occur, return to the planning or decision layer instead of stretching the current spec.
+
+Older specs may still use `in-progress`.
+They do not need to be rewritten retroactively; use the newer status set for new or materially revised specs.
+
+## Phase-Aware Fields
+
+For long-running, multi-phase, dependency-heavy, or repair-sensitive work, keep the parent mapping and execution contract explicit in the spec.
+The main additions are:
+
+- `Parent Phase`
+- `Parent Plan`
+- `Inputs`
+- `Expected Outputs`
+- `Allowed Edits`
+- `Disallowed Edits`
+- `Repair Budget`
+- `Rollback Scope`
+- `Escalation Condition`
+
+Do not treat these fields as a reason to turn one spec into a project board.
+If the spec grows large, split it instead.
 
 ## Checklist
 

@@ -1,5 +1,11 @@
 # Project Scope Template
 
+## Project Target
+What stable top-level objective is this repository or project serving?
+
+## Current Target
+What narrower objective is being actively advanced now?
+
 ## Current Phase Goal
 What must the current phase achieve?
 

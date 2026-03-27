@@ -23,7 +23,7 @@ The core repository rule still applies: when work is ready for implementation, t
 ### Executor
 - implement and validate one spec at a time
 - stay within the current spec boundary
-- report blockers, ambiguity, and validation gaps back to the planner / specifier
+- report blockers, ambiguity, validation gaps, and escalation outcomes back to the planner / specifier
 - do not expand scope or invent missing design
 
 ## Artifact Policy
@@ -52,7 +52,7 @@ The executor should accept only:
 - a single target spec
 - allowed scope and forbidden scope
 - explicit validation expectations
-- clear stop or fallback conditions
+- clear stop or fallback conditions, including when to return `needs_decision` or `replan_required`
 
 The executor should not accept:
 - design-only input
@@ -69,11 +69,12 @@ When this happens, the planner / specifier should explicitly list the missing de
 3. When the work is implementation-ready, derive one or more narrow specs.
 4. Hand one spec at a time to the executor.
 5. Validate the completed work against the spec.
-6. If boundaries change or blockers appear, return to the planner / specifier to refine or split the spec.
+6. If boundaries change, repair is exhausted, or a decision boundary appears, return to the planner / specifier with `replan_required` or `needs_decision` instead of stretching the spec.
 
 ## Iteration Loop
 
 Follow `ai/doc/specs/README.md` for spec refinement, splitting, and lifecycle conventions.
+Use `ai/doc/guides/task-lifecycle-and-escalation.md` when the handoff needs explicit repair, rollback, replan, or escalation rules.
 Keep scope changes with the planner / specifier, not the executor.
 
 ## Executor Mutation Limits
@@ -82,6 +83,8 @@ By default, the executor may update only:
 - `Status`
 - `Task Checklist`
 - `Risks / Notes`
+
+When lifecycle guidance is in scope, the executor may also report whether the task is in `validating`, `repairing`, or `rolled_back`, or whether the outcome is `needs_decision` or `replan_required`.
 
 The executor should not rewrite:
 - `Goal`

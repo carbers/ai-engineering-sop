@@ -12,6 +12,8 @@ Facts are not an archive of every discussion.
 ## File map
 
 - `project-scope.md`
+  - stable project target
+  - current target
   - current phase goal
   - stable scope boundaries
   - current assumptions
@@ -35,6 +37,17 @@ Do not put these into facts:
 ## Routing rule
 
 Follow the write-back policy in `AGENTS.md` before adding content here.
+
+When a task or plan names a write-back type, use it as a routing hint rather than a reason to create a new file type:
+
+- `facts_update`: stable project context or validation references under `ai/doc/facts/*`
+- `skill_promotion`: reusable workflow updates under `ai/skill/*`
+- `decision_rationale`: only when the decision is stable and reusable; otherwise leave it in task-local artifacts
+- `phase_lesson`: only when the lesson should influence later phases or future runs
+- `task_pattern`: reusable execution pattern worth preserving, usually in an existing fact file unless it matures into a skill
+- `anti_pattern`: repeated pitfall worth preserving, not one-off frustration
+
+These labels are a routing taxonomy, not a requirement to create one file per label.
 
 ## Maintenance rule
 

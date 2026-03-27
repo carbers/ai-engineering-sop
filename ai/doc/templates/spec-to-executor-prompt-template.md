@@ -17,8 +17,11 @@ What must remain out of scope for this execution pass?
 ### Validation Expectations
 What validation is required before this work can be reported as done?
 
+### Escalation Expectations
+When should the executor return `needs_decision` or `replan_required` instead of continuing?
+
 ### Completion Reporting Format
-How should the executor report completed work, validation, blockers, and follow-ups?
+How should the executor report completed work, validation, blockers, escalation outcomes, and follow-ups?
 
 ### Stop / Fallback Conditions
 When should the executor stop and hand the work back to the planner / specifier?
@@ -29,7 +32,7 @@ The executor should:
 - consume one spec at a time
 - stay inside the current spec boundary
 - validate against the spec before reporting completion
-- return blockers, ambiguity, and scope pressure to the planner / specifier
+- return blockers, ambiguity, scope pressure, and escalation outcomes to the planner / specifier
 
 The executor should not:
 - re-open the high-level design
@@ -50,3 +53,4 @@ Stop and return the work when:
 - validation is not strong enough to decide `done`
 - the work appears to require broader scope
 - the work should be split into multiple reviewable slices
+- the task should return as `needs_decision` or `replan_required`
