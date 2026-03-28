@@ -32,6 +32,7 @@ The executor should:
 - consume one spec at a time
 - stay inside the current spec boundary
 - validate against the spec before reporting completion
+- make the spec's write-back and closeout decision explicit before reporting `done`
 - return blockers, ambiguity, scope pressure, and escalation outcomes to the planner / specifier
 
 The executor should not:
@@ -45,6 +46,8 @@ The executor may update only:
 - `Risks / Notes`
 
 If the team does not want executors to edit specs directly, the same updates should be reported back instead.
+If the repository uses `project/*`, completion reporting should state whether `ai/skill/session-closeout.md` was applied and what, if anything, was updated.
+If the spec is marked `release_sensitive`, completion reporting should also call out any deployment, migration, config, compatibility, or rollback note that a later release batch review should see.
 
 ## Fallback Conditions
 

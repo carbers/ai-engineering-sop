@@ -30,6 +30,9 @@ Use the repository layers as follows:
 - `ai/README.md`
   Namespace map for the `ai/` workflow namespace and its boundary rules.
 
+- `project/*`
+  Minimal human-facing control surface for current state, durable project-level decisions, and experiment summaries that help people recover context quickly.
+
 - `.cursor/rules/*`  
   Execution guardrails for Cursor.
 
@@ -55,12 +58,14 @@ The canonical namespace roots are singular: use `ai/doc` and `ai/skill`, not par
 ## Entrypoint model
 
 - `README.md` is the human-facing and project-facing entrypoint.
+- `project/CURRENT.md` is the recovery-first entry for current human-facing project state when a project control surface exists.
 - `AGENTS.md` is the canonical AI-tool entrypoint.
 - Adapter files such as `CLAUDE.md` should defer to `AGENTS.md`.
 - `ai/README.md` documents the `ai/*` namespace after the AI tool has entered through its adapter or `AGENTS.md`.
 
 When this starter is copied into a real project:
 - let `README.md` become the project's human-facing README
+- use a root-level `project/` control surface as the default recovery layer when human readers need current-state navigation
 - keep `AGENTS.md` and any adapters as AI-tool entrypoints
 - keep `ai/README.md` as the namespace map for AI workflow assets
 
@@ -133,6 +138,20 @@ Use this rule before writing back:
 If the answer is not clearly yes, do not write it back.
 
 Facts are stable context, not an archive.
+
+## Project control sync rule
+
+When a change produces a durable shift in current phase, active slice, frozen decision, or experiment status, update the appropriate file under `project/*` in the same change.
+
+Use:
+
+- `project/CURRENT.md` for current operating state
+- `project/DOC_MAP.md` when the reading order or document roles change
+- `project/decisions/*` for frozen project-level decisions worth re-reading later
+- `project/experiments/*` for experiment runs and readable summaries
+
+Do not route temporary task chatter into `project/*`.
+Do not use `ai/doc/facts/*` as the project's current-status dashboard.
 
 ## Skill promotion rule
 

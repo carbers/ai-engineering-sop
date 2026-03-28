@@ -34,6 +34,22 @@ If the task stops for escalation, keep `Status` on the last accurate steady-stat
 ### Related Specs
 Optional. Link sibling, prerequisite, or follow-up specs when that helps navigation.
 
+### Release Sensitivity
+Optional. Use only when this task may need special attention in a real product release batch.
+If omitted, treat it as `normal`.
+Choose one:
+- `normal`
+- `release_sensitive`
+
+If `release_sensitive`, briefly name why.
+Typical reasons:
+- data migration
+- config or feature-flag dependency
+- public API or compatibility impact
+- auth, permissions, billing, or compliance impact
+- rollback difficulty
+- performance or reliability sensitivity
+
 ## Goal
 What should this task accomplish?
 
@@ -107,6 +123,8 @@ When should this task stop and return as `needs_decision` or `replan_required` i
 Yes / No
 
 If yes, what stable information should be written back, where does it belong, and which type best fits?
+After required validation and before reporting `done`, make an explicit closeout decision.
+If the repository uses `project/*`, use `ai/skill/session-closeout.md` to decide whether `project/CURRENT.md`, `project/DOC_MAP.md`, `project/decisions/*`, `project/experiments/*`, facts, or skills need updates.
 Suggested labels:
 - `facts_update`
 - `skill_promotion`

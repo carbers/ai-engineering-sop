@@ -21,6 +21,7 @@ See these examples:
 - `20260102-001-example-phase-aware-guide-slice.md` for thin use of the phase-aware fields
 - `20260103-001-example-adoption-entrypoint-slice.md` for one complete phase-aware task slice inside a longer chain
 - `20260104-001-example-first-copied-project-quickstart.md` for a first-use small-task spec on the default lightweight path
+- `20260328-003-example-project-control-closeout-loop.md` for a small-task example that also shows the minimal control-surface closeout path
 
 See `ai/doc/guides/phase-aware-canonical-example.md` for a closed long-task example that links `project_target -> current_target -> phase -> main_plan -> sub_plan -> task -> validation -> write-back`.
 If you want the matching small-task reference, start with `20260104-001-example-first-copied-project-quickstart.md`.
@@ -99,6 +100,20 @@ The main additions are:
 
 Do not treat these fields as a reason to turn one spec into a project board.
 If the spec grows large, split it instead.
+
+## Release Sensitivity
+
+Task specs are not release records.
+Do not add release-readiness paperwork to every spec.
+
+If a task may need special attention in a future real-product release batch, use the optional `Release Sensitivity` field:
+
+- `normal`: no special batch-level release handling is expected
+- `release_sensitive`: a future release batch should call out this slice because of deployment, migration, config, compatibility, auth/billing, performance/reliability, or rollback concerns
+
+If the field is omitted, treat it as `normal`.
+When a real release is being prepared, aggregate the few release-sensitive slices at the batch level instead of duplicating release review inside every spec.
+Use `ai/doc/templates/release-batch-template.md` if the project wants a lightweight release record.
 
 ## Checklist
 

@@ -56,3 +56,18 @@ Prefer protecting:
 - fragile stateful behavior
 - regression-prone paths
 - high-risk branches
+
+## 3. Batch-level release checks
+
+Do not turn every task spec into a release checklist.
+For real product releases, do release-readiness review at the batch level.
+
+A lightweight batch review should aggregate:
+- included specs or change summaries
+- any specs marked `release_sensitive`
+- validation outcomes already completed during task execution
+- deployment, migration, config, compatibility, and rollback notes
+- post-release checks that still need human review
+
+This reduces human collection work, but it does not replace human release judgment.
+Use `ai/doc/templates/release-batch-template.md` when the project wants a lightweight release record.

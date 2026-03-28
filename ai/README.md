@@ -27,6 +27,7 @@ Do not put content in `ai/` when it is primarily project-facing documentation su
 - user or operator documentation
 
 Those project-facing materials should live outside `ai/` in the repository structure chosen by the project.
+A recommended default is a root-level `project/` control surface, with `project/CURRENT.md` as the recovery-first file for humans returning to the work.
 
 ## Naming convention
 
@@ -42,6 +43,7 @@ Do not create parallel roots such as `ai/docs` or `ai/skills`.
 2. Read `doc/guides/new-project-sop.md` for the default workflow.
 3. Read `doc/specs/README.md` before creating or refining specs.
 4. Use `skill/plan-to-spec.md` when work is moving from plan to implementation.
+5. When preparing a real product release, use `doc/guides/testing-strategy.md` and `doc/templates/release-batch-template.md` for the optional batch-level release check.
 
 ## Maintenance rule
 

@@ -13,8 +13,8 @@ Facts are not an archive of every discussion.
 
 - `project-scope.md`
   - stable project target
-  - current target
-  - current phase goal
+  - stable current target
+  - stable phase goal
   - stable scope boundaries
   - current assumptions
   - open risks worth tracking
@@ -33,10 +33,13 @@ Do not put these into facts:
 - one-off task reasoning
 - unstable exploration
 - content that belongs only in a change summary
+- current project dashboard content that belongs in `project/CURRENT.md`
+- project-level decision or experiment ledgers that belong in `project/*`
 
 ## Routing rule
 
 Follow the write-back policy in `AGENTS.md` before adding content here.
+Treat `project-scope.md` as slower-moving scope context, not as the live current-status layer.
 
 When a task or plan names a write-back type, use it as a routing hint rather than a reason to create a new file type:
 

@@ -1,13 +1,17 @@
 # Project Scope Template
 
+Use this fact for relatively stable scope, boundary, and assumption context.
+Do not update it for routine task progress or every active-slice change.
+Use `project/CURRENT.md` for live operating state when the project uses a control surface.
+
 ## Project Target
 What stable top-level objective is this repository or project serving?
 
-## Current Target
-What narrower objective is being actively advanced now?
+## Stable Current Target
+What narrower objective is currently in force at the project or phase level?
 
-## Current Phase Goal
-What must the current phase achieve?
+## Stable Phase Goal
+What phase-level outcome should stay true until the next meaningful re-scope?
 
 ## In Scope
 What is included in the current phase?

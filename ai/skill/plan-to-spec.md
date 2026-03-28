@@ -34,6 +34,7 @@ When the work is phase-aware, also capture:
 - black-box validation guidance
 - white-box trigger judgment
 - write-back guidance
+- optional `release_sensitive` signal when a future real-product release may need batch-level review
 
 For longer-running or dependency-heavy work, also make explicit:
 - `Parent Phase`
@@ -82,7 +83,11 @@ Trigger white-box guidance when internal logic is branch-heavy, stateful, regres
 Only mark write-back as needed when the task is expected to clarify stable, reusable context.
 If write-back is needed, name the destination.
 
-### 9. Add failure boundaries only when they help
+### 9. Mark release sensitivity only when it matters
+Use `release_sensitive` only when a future real-product release batch may need to call out this slice for deployment, migration, config, compatibility, or rollback review.
+Leave ordinary tasks on `normal`.
+
+### 10. Add failure boundaries only when they help
 For long-running, dependency-heavy, or repair-sensitive work, specify repair budget, rollback scope, and escalation conditions.
 Keep these fields short on trivially narrow tasks.
 
@@ -99,3 +104,4 @@ Keep these fields short on trivially narrow tasks.
 - using the checklist as a work log or full project board
 - continuing to repair after the spec should have been replanned or escalated
 - writing back too much task-local detail
+- marking too many ordinary specs as `release_sensitive`

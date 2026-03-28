@@ -25,6 +25,8 @@ When this starter is copied into a real project, keep the entrypoints split:
 - keep `AGENTS.md` and any tool adapters as AI-tool entrypoints
 - keep `ai/README.md` as the namespace map for AI workflow assets
 - keep project-facing docs outside `ai/`
+- when human readers need a recovery-first current-state view, use a root-level `project/` control surface and start with `project/CURRENT.md`
+  If you adopt that control surface, also keep `ai/doc/templates/current-template.md`, `ai/doc/templates/doc-map-template.md`, and `ai/skill/session-closeout.md` so it stays small and current.
 
 ## Default startup order
 
@@ -59,6 +61,7 @@ If you want the guided first-use path to remain available after copying, also ke
 - `ai/doc/guides/new-project-sop.md`
 - `ai/doc/guides/testing-strategy.md`
 - `ai/doc/guides/task-lifecycle-and-escalation.md`
+- `ai/doc/templates/release-batch-template.md` when the project will prepare real product releases and wants a lightweight batch-level release check
 - `ai/doc/specs/20260104-001-example-first-copied-project-quickstart.md`
 - `ai/doc/guides/phase-aware-workflow.md` when long-task guidance is needed
 - `ai/doc/guides/phase-aware-canonical-example.md`
@@ -114,6 +117,7 @@ Use `ai/skill/plan-to-spec.md`, `ai/doc/specs/README.md`, and `ai/doc/templates/
 A task spec should shrink the plan into a narrow implementation contract.
 See `ai/doc/specs/README.md` for naming, splitting, and lifecycle conventions.
 For longer-running work, also use `ai/doc/guides/task-lifecycle-and-escalation.md` so repair, rollback, replan, and escalation stay explicit.
+When a returning human needs to recover the current state before entering the active spec, start with `project/CURRENT.md`.
 
 For the first copied-project slice:
 - start with one spec, not a batch of specs
@@ -121,6 +125,7 @@ For the first copied-project slice:
 - use the phase-aware fields only when they make the current slice easier to hand off or recover
 
 If you want a copyable default-path example, see `ai/doc/specs/20260104-001-example-first-copied-project-quickstart.md`.
+If you want a copyable example that includes the minimal control-surface closeout path, see `ai/doc/specs/20260328-003-example-project-control-closeout-loop.md`.
 
 ### 4. Decide starter/code skeleton work deliberately
 Project starter work is a result of planning, not a global precondition.
@@ -149,6 +154,11 @@ Do not turn every task discussion into permanent docs.
 
 For the first copied-project slice, write back only when something became stable enough to help the next task.
 If nothing stable emerged, skip write-back.
+
+### 7. Prepare release batches only when needed
+Do not create release-readiness records for every task.
+When the project is preparing a real product release, aggregate the release-sensitive slices at the batch level instead.
+Use `ai/doc/templates/release-batch-template.md` if you want a lightweight release record that can be reviewed by both humans and future automation.
 
 ## Practical note
 

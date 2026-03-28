@@ -17,6 +17,9 @@ What white-box validation was performed, if required?
 ## Regression Path Protected
 What regression path or internal contract is now better protected, if any?
 
+## Release-Sensitive Notes
+If this slice is release-sensitive, what deployment, migration, config, compatibility, or rollback note should a future release batch review see?
+
 ## Facts / Skills Updated
 What was written back, if anything?
 
