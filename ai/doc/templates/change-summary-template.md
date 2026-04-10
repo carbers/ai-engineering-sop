@@ -1,5 +1,9 @@
 # Change Summary Template
 
+Use this template only for task-local delivery notes.
+It is not a required durable repo artifact, and there is no canonical repository directory for change summaries by default.
+Prefer the team's normal handoff surface, such as completion reporting or PR context, unless a copied project explicitly chooses to keep local change summaries.
+
 ## What Changed
 Summarize the implementation work that was completed.
 

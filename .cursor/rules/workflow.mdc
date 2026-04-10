@@ -13,8 +13,12 @@ alwaysApply: true
 - If iterating within the same reviewable slice, refine the existing spec instead of creating parallel docs.
 - If the primary outcome, boundary, or validation path changes, create a new dated spec before editing.
 - Prefer one task spec with one primary reviewable outcome and a short checklist.
+- Create or refine a spec before editing whenever the task is long-running, multi-step, multi-file, multi-handoff, write-back-bearing, or not obviously trivial from the request alone.
 - A tiny task may skip spec creation only when the request is already effectively spec-complete and trivially narrow.
+- Durable task specs belong only in `ai/doc/specs/`; do not create parallel spec files in guides, templates, `project/*`, facts, skills, or ad hoc root files.
 - Implement only after the task boundary is clear.
 - Validate explicitly after implementation.
-- Write back stable facts only when justified.
+- When the repository uses `project/*`, update `project/CURRENT.md`, `project/memory/*`, `project/DOC_MAP.md`, `project/decisions/*`, or `project/experiments/*` in the same change when the completed slice made one of those layers durably stale.
+- Use `ai/skill/session-closeout.md` to make the closeout and write-back decision explicit when control-surface or project-memory updates may be needed.
+- Write back stable reusable context only when justified.
 - Promote repeated workflows into skills when they stabilize.

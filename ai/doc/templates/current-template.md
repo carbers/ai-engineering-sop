@@ -6,6 +6,7 @@ Keep it short.
 Do not turn it into a project board, work log, or task ledger.
 Update it only when the current phase, current target, active slice, source of truth, or next durable actions changed.
 Keep `Next 3 actions` to three items and keep the whole file roughly to one screen when possible.
+If the project uses `project/memory/*`, keep repeated agreements and recurring patterns there instead of mixing them into this file.
 
 ## Do not put here
 - running progress updates
@@ -32,6 +33,7 @@ What is explicitly excluded right now?
 List only the files that are authoritative right now.
 Prefer role files and the active spec, not historical rollout specs or an exhaustive file inventory.
 Which files should a returning reader trust first?
+If the project uses project memory and it currently shapes execution, include `project/memory/README.md` and any specific memory page that matters now.
 
 ## Frozen decisions
 Which durable project-level choices are currently in force?

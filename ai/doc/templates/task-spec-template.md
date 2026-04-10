@@ -2,6 +2,7 @@
 
 Keep this document narrow. Reference the plan when needed instead of restating it.
 Store task specs in `ai/doc/specs/` and name them `YYYYMMDD-NNN-task-slug.md`.
+Do not store durable task specs in any other directory.
 For trivially narrow work, phase-aware fields may stay short or be omitted when the parent context is already obvious.
 
 ## Metadata
@@ -124,8 +125,9 @@ Yes / No
 
 If yes, what stable information should be written back, where does it belong, and which type best fits?
 After required validation and before reporting `done`, make an explicit closeout decision.
-If the repository uses `project/*`, use `ai/skill/session-closeout.md` to decide whether `project/CURRENT.md`, `project/DOC_MAP.md`, `project/decisions/*`, `project/experiments/*`, facts, or skills need updates.
+If the repository uses `project/*`, use `ai/skill/session-closeout.md` to decide whether `project/CURRENT.md`, `project/memory/*`, `project/DOC_MAP.md`, `project/decisions/*`, `project/experiments/*`, facts, or skills need updates.
 Suggested labels:
+- `project_memory`
 - `facts_update`
 - `skill_promotion`
 - `decision_rationale`

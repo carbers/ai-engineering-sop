@@ -47,12 +47,14 @@ For longer-running or dependency-heavy work, also make explicit:
 - `Escalation Condition`
 
 Name and store specs using the conventions in `ai/doc/specs/README.md`.
+Do not emit durable task specs into guides, templates, `project/*`, facts, skills, or ad hoc scratch files.
 
 ## Workflow
 
 ### 1. Start from the current slice
 Turn broad plan statements into the next smallest reviewable slice or slices that still move the phase forward.
 If the work is phase-aware, make sure the slice still maps cleanly back to the current phase and parent plan.
+If the slice is too large to execute safely without a spec, that is a signal to split it into multiple canonical specs in `ai/doc/specs/`.
 
 ### 2. One spec, one primary outcome
 A spec should produce one primary reviewable outcome.
@@ -93,7 +95,9 @@ Keep these fields short on trivially narrow tasks.
 
 ## Common failure modes
 - turning the plan directly into one giant spec
+- executing large work without creating a spec first
 - copying plan text into the task spec without narrowing it
+- storing the spec outside `ai/doc/specs/`
 - keeping multiple primary outcomes in the same spec
 - losing the parent phase or parent plan mapping on longer work
 - leaving validation vague

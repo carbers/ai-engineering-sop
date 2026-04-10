@@ -9,6 +9,7 @@ Keep it to the few document families a returning reader actually needs.
 
 ## Start order
 Which few files should a reader check first, and in what order?
+When the project uses `project/memory/*`, place `project/memory/README.md` immediately after `project/CURRENT.md`.
 
 ## Document roles
 Which major document families answer which questions?
@@ -16,6 +17,7 @@ Which major document families answer which questions?
 ## Priority rule
 When documents appear to overlap, which layer wins for:
 - current-state questions
+- longer-lived project-memory questions
 - task-execution questions
 - repository-rule questions
 - stable reusable context

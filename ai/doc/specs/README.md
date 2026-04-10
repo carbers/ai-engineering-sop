@@ -49,6 +49,17 @@ Example:
 - if the primary outcome, boundary, or validation path changes, create a new dated spec first
 - only tiny task requests that are already effectively spec-complete and trivially narrow may skip spec creation
 
+Create or refine a spec before editing when one or more of these are true:
+
+- the task is long-running, multi-step, or unlikely to stay inside one obvious review pass
+- the task needs explicit validation, repair, rollback, or escalation boundaries
+- the task involves handoff across people, models, sessions, or tools
+- the task touches multiple files, modules, or document layers and the boundary is not already trivial
+- the task may write back into `project/*`, `ai/doc/facts/*`, or `ai/skill/*`
+- the request is broad enough that the final task boundary still needs narrowing
+
+Large work without a spec is a process failure, not a lightweight-path optimization.
+
 ## Keep Specs Small
 
 One spec should produce one primary reviewable outcome.
@@ -59,6 +70,21 @@ Split a spec when it would contain:
 - independently reviewable slices
 - distinct validation paths
 - a checklist that no longer stays short
+
+## Canonical location
+
+Durable task specs live only in `ai/doc/specs/`.
+
+Do not store task specs in:
+
+- `project/*`
+- `ai/doc/guides/*`
+- `ai/doc/templates/*`
+- `ai/doc/facts/*`
+- `ai/skill/*`
+- root-level scratch or handoff files
+
+If another document needs to reference a task's execution contract, link the canonical spec in `ai/doc/specs/*` instead of duplicating it elsewhere.
 
 ## Status
 

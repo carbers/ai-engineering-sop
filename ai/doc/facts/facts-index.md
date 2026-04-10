@@ -45,6 +45,7 @@ When a task or plan names a write-back type, use it as a routing hint rather tha
 
 - `facts_update`: stable project context or validation references under `ai/doc/facts/*`
 - `skill_promotion`: reusable workflow updates under `ai/skill/*`
+- `project_memory`: longer-lived project-specific memory under `project/memory/*`
 - `decision_rationale`: only when the decision is stable and reusable; otherwise leave it in task-local artifacts
 - `phase_lesson`: only when the lesson should influence later phases or future runs
 - `task_pattern`: reusable execution pattern worth preserving, usually in an existing fact file unless it matures into a skill

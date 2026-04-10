@@ -1,6 +1,7 @@
 # New Project SOP
 
 Use this SOP when starting a new project or when introducing structure into an existing project.
+This is an on-demand guide, not part of the minimum default context.
 
 ## First Use In A Copied Project
 
@@ -26,7 +27,7 @@ When this starter is copied into a real project, keep the entrypoints split:
 - keep `ai/README.md` as the namespace map for AI workflow assets
 - keep project-facing docs outside `ai/`
 - when human readers need a recovery-first current-state view, use a root-level `project/` control surface and start with `project/CURRENT.md`
-  If you adopt that control surface, also keep `ai/doc/templates/current-template.md`, `ai/doc/templates/doc-map-template.md`, and `ai/skill/session-closeout.md` so it stays small and current.
+  If you adopt that control surface, keep `project/README.md`, `project/decisions/`, `project/experiments/`, and the starter memory pages under `project/memory/*`, plus `ai/doc/templates/current-template.md`, `ai/doc/templates/doc-map-template.md`, `ai/doc/templates/project-memory-readme-template.md`, `ai/doc/templates/project-memory-page-template.md`, and `ai/skill/session-closeout.md`. Initialize `project/CURRENT.md` and `project/DOC_MAP.md` from the templates in the copied project so the control surface starts with project-specific state rather than this repository's example state, and keep the copied memory pages as empty scaffolding until real repeated project memory exists.
 
 ## Default startup order
 
@@ -34,7 +35,7 @@ When this starter is copied into a real project, keep the entrypoints split:
 2. derive one or more task specs from the plan
 3. implement narrowly
 4. validate explicitly
-5. write back stable facts
+5. write back stable reusable context when justified
 6. promote repeatable workflows into skills when justified
 
 The default path stays lightweight.
@@ -118,6 +119,7 @@ A task spec should shrink the plan into a narrow implementation contract.
 See `ai/doc/specs/README.md` for naming, splitting, and lifecycle conventions.
 For longer-running work, also use `ai/doc/guides/task-lifecycle-and-escalation.md` so repair, rollback, replan, and escalation stay explicit.
 When a returning human needs to recover the current state before entering the active spec, start with `project/CURRENT.md`.
+If the project uses project memory, read `project/memory/README.md` next for longer-lived agreements and recurring patterns.
 
 For the first copied-project slice:
 - start with one spec, not a batch of specs
@@ -143,11 +145,17 @@ For the first copied-project slice, prefer validation that a reviewer can quickl
 - what check proves the slice is done
 - whether any internal regression path also needs protection
 
-### 6. Write back stable facts
+### 6. Write back stable reusable context
 After implementation and validation, create or update:
 
+- `project/CURRENT.md` when the current operating state or next durable actions changed
+- `project/memory/*` when stable project-facing memory should keep influencing later work in this project
+- `project/DOC_MAP.md` when the normal reading order or document roles changed
+- `project/decisions/*` when a durable project-level choice was frozen
+- `project/experiments/*` when a real experiment produced a reusable result worth re-reading later
 - `ai/doc/facts/project-scope.md` when scope or boundaries became clearer
 - `ai/doc/facts/golden-cases.md` when stable reusable validation references are worth preserving
+- `ai/skill/*` when a repeated workflow has stabilized and should be reused later
 
 Write back only stable, reusable context.
 Do not turn every task discussion into permanent docs.

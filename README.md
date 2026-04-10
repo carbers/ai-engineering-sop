@@ -14,7 +14,18 @@ Use this repository when you want a project to move from planning to narrow exec
 
 Both paths still converge on one or more narrow task specs before implementation.
 
-If you are returning to active work in a project that uses `project/*`, start with `project/CURRENT.md` before diving into specs or guides.
+If you are returning to active work in a project that uses `project/*`, start with `project/CURRENT.md`, then `project/memory/README.md` when you need the longer-lived memory that shapes ongoing work.
+
+## Minimal Default Context
+
+For AI tools, the smallest useful default read set is:
+
+1. `AGENTS.md`
+2. `ai/README.md` only when you need `ai/*` namespace routing
+3. `project/CURRENT.md` when the repository uses `project/*` and current state matters
+4. `project/memory/README.md` only when `CURRENT.md` or the task shows that longer-lived project memory matters
+
+Open guides, templates, facts, examples, and skills only when the current task needs them.
 
 ## What this repository is for
 
@@ -24,7 +35,7 @@ This starter is for teams that want a practical default workflow for:
 2. deriving one or more narrow task specs
 3. implementing the smallest coherent change
 4. validating explicitly, with black-box checks by default
-5. writing back stable facts
+5. writing back stable reusable context selectively
 6. promoting repeated workflows into reusable skills
 
 It is suitable for new projects, existing projects, non-web projects, and mixed engineering environments.
@@ -37,84 +48,33 @@ The intended workflow is:
 2. derive one or more narrow task specs in `ai/doc/specs/`
 3. implement narrowly
 4. validate explicitly
-5. write back stable facts when justified
+5. write back stable reusable context when justified
 6. promote repeated workflows into skills when they stabilize
 
 See `AGENTS.md` for the full working model, including when plans should be persisted, when specs may be skipped, and how validation layers work.
 
-The repository's AI-managed SOP assets live under `ai/`.
-This keeps workflow docs, templates, facts, specs, and skills separate from project-facing product documentation.
-See `ai/README.md` for the AI workflow namespace map and boundary rules.
+## Navigation
 
-When a project uses `project/*`, its human-facing recovery layer lives there.
-Start with `project/CURRENT.md` when you need to recover the current phase, active slice, next actions, or the current source of truth.
-
-## Project Control Surface
-
-When a project uses `project/*`, use it as the minimal control surface for human readers returning to the work.
-
-- `project/CURRENT.md`
-  Recovery-first current state for humans.
-
-- `project/DOC_MAP.md`
-  Short explanation of which document answers which question.
-
-- `project/decisions/*`
-  Frozen project-level decisions worth re-reading later.
-
-- `project/experiments/*`
-  Readable experiment summaries when experiments become part of the workflow.
-
-Use `ai/*` for AI-managed execution assets.
-Use `project/*` for human-facing recovery and control.
-
-## Entrypoints
-
-This repository intentionally uses split entrypoints:
+Use the repository entrypoints and layers like this:
 
 - `README.md`
-  Human-facing and project-facing entrypoint.
-
-- `project/CURRENT.md`
-  Recovery-first entry for the current human-facing project state when the project uses `project/*`.
-
-- `AGENTS.md` and adapter files such as `CLAUDE.md`
-  AI-tool entrypoints.
-
-- `ai/README.md`
-  Namespace map for AI workflow assets after entering through the AI-tool guidance.
-
-## Repository roles
-
-- `README.md`
-  Human-facing entry point and adoption guide for this starter.
+  Human-facing entry and adoption guide.
 
 - `AGENTS.md`
-  Canonical AI-tool operating rules for the repository.
-
-- `CLAUDE.md`
-  Lightweight AI-tool adapter that points back to `AGENTS.md`.
+  Canonical AI-tool rules and default context discipline.
 
 - `ai/README.md`
-  Namespace map for AI-managed workflow assets, boundaries, and navigation.
+  Namespace map for `ai/*`.
 
-- `.cursor/rules/*`
-  Execution guardrails for Cursor.
+- `project/CURRENT.md`
+  Recovery-first current state when the repository uses `project/*`.
 
-- `ai/doc/guides/*`
-  Practical workflow guidance for adopting and using the SOP.
+- `project/memory/README.md`
+  Longer-lived project memory when repeated context should remain easy to recover.
 
-- `ai/doc/templates/*`
-  Reusable working artifacts such as plans, task specs, change summaries, and prompt scaffolds for multi-model handoff.
-
-- `ai/doc/specs/*`
-  Task specs used as the default execution artifact between plan and implementation.
-
-- `ai/doc/facts/*`
-  Stable reusable context, not an archive of task chatter.
-
-- `ai/skill/*`
-  Lightweight reusable workflow capabilities.
+The repository's AI-managed SOP assets live under `ai/`.
+Project-facing recovery and control live under `project/*` when that control surface is in use.
+Change summaries are optional task-local delivery notes and have no required repository directory by default.
 
 ## Adopting this starter
 
@@ -131,6 +91,7 @@ Keep `AGENTS.md` plus any tool adapters as the AI-tool entrypoints.
 Keep `ai/README.md` as the namespace map for AI workflow assets.
 Keep project-facing docs outside `ai/` so the namespace remains reserved for AI workflow assets.
 When the copied project uses a root-level `project/` control surface, use it as the human-facing recovery layer, with `project/CURRENT.md` as the first file to read when returning to the project.
+Use `project/memory/*` as the next layer when the project needs durable memory that is broader than one task but narrower than reusable AI facts.
 
 ## Minimal adoption path
 
@@ -148,9 +109,14 @@ The smallest practical starting point is:
 That list is the bare minimum.
 If you also want the recommended recovery-first control surface for humans, keep:
 
-- `project/*`
+- `project/README.md`
+- `project/decisions/`
+- `project/experiments/`
+- `project/memory/*`
 - `ai/doc/templates/current-template.md`
 - `ai/doc/templates/doc-map-template.md`
+- `ai/doc/templates/project-memory-readme-template.md`
+- `ai/doc/templates/project-memory-page-template.md`
 - `ai/skill/session-closeout.md`
 
 If you want the guided first-use path to remain available after copying, also keep:
@@ -166,7 +132,7 @@ If you want the guided first-use path to remain available after copying, also ke
 ## Copy Into A Real Project In 10 Minutes
 
 1. Copy the minimal adoption set into the real project. If you want this guided walkthrough to remain available inside the copied project, also copy the guided first-use files listed above. Keep the split entrypoints: root `README.md` for humans, `AGENTS.md` for AI tools, and `ai/README.md` for the `ai/*` namespace.
-  If you want a recovery-first control surface for humans, copy `project/*` together with `ai/doc/templates/current-template.md`, `ai/doc/templates/doc-map-template.md`, and `ai/skill/session-closeout.md`, then start with `project/CURRENT.md`.
+  If you want a recovery-first control surface for humans, copy `project/README.md`, `project/decisions/`, `project/experiments/`, and the starter memory pages under `project/memory/*` together with `ai/doc/templates/current-template.md`, `ai/doc/templates/doc-map-template.md`, `ai/doc/templates/project-memory-readme-template.md`, `ai/doc/templates/project-memory-page-template.md`, and `ai/skill/session-closeout.md`. Then initialize `project/CURRENT.md` from `ai/doc/templates/current-template.md` and `project/DOC_MAP.md` from `ai/doc/templates/doc-map-template.md`, and keep the copied memory pages as empty scaffolding until real repeated project memory exists. Start with `project/CURRENT.md` and `project/memory/README.md`.
 2. Decide whether the first slice is a `small task / narrow change` or a `long task / multi-phase / multi-handoff`.
 3. Clarify the first reviewable slice in your normal planning workflow.
 4. Persist a written plan only if the phase, handoff, or checkpoint structure is worth re-reading later. Otherwise move directly to the first spec.
@@ -190,13 +156,13 @@ This repository is not:
 ## Where to look next
 
 1. if the project uses `project/*` and you need the current project state, read `project/CURRENT.md`
-2. read `AGENTS.md`
-3. if you are wiring AI workflow assets, read `ai/README.md`
-4. for a first copied-project run, read `ai/doc/guides/new-project-sop.md`
+2. if the project uses `project/*` and you need longer-lived agreements or recurring project memory, read `project/memory/README.md`
+3. read `AGENTS.md`
+4. if you are wiring AI workflow assets, read `ai/README.md`
 5. for the default lightweight path, read `ai/doc/specs/README.md`
 6. for the phase-aware long-task path, read `ai/doc/guides/phase-aware-workflow.md` and `ai/doc/guides/phase-aware-canonical-example.md`
-7. create or refine a first plan, using `ai/doc/templates/plan-template.md` only when you want a durable written plan
-8. initialize `ai/doc/facts/project-scope.md` when stable scope is clear
+7. for a copied-project walkthrough, read `ai/doc/guides/new-project-sop.md` only when you need the guided first-use path
+8. create or refine a first plan, using `ai/doc/templates/plan-template.md` only when you want a durable written plan
 
 When design, planning, and execution are split across different tools or roles, also see `ai/doc/guides/design-to-spec-handoff.md` and the prompt scaffolds in `ai/doc/templates/design-to-planner-prompt-template.md` and `ai/doc/templates/spec-to-executor-prompt-template.md`.
 
@@ -206,7 +172,7 @@ When design, planning, and execution are split across different tools or roles, 
 - copied-project adoption now has a faster first-use route in `README.md` and `ai/doc/guides/new-project-sop.md`
 - both paths now have copyable examples: a closed phase-aware chain and a first-use small-task spec
 - task status and escalation wording are now aligned across the specs guide, lifecycle guide, and task spec template
-- the repository now includes a minimal `project/*` control surface with closeout guidance to keep human recovery state separate from AI execution assets
+- the repository now includes a minimal `project/*` control surface with project memory and closeout guidance to keep human recovery state separate from AI execution assets
 - real product releases can use an optional lightweight batch-level release check instead of adding release paperwork to every spec
 
 ---

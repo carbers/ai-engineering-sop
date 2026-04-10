@@ -11,6 +11,7 @@ Use the minimal control surface as the default recovery path and keep it small a
 
 ## In scope now
 - Keep `project/CURRENT.md` as the recovery-first human artifact
+- Keep `project/memory/*` as the long-lived project-memory layer for repeated agreements and patterns
 - Keep `project/DOC_MAP.md` role-based and short
 - Use `project/decisions/*` and `project/experiments/*` only for durable project-level outcomes
 - Maintain the supporting templates, worked example, and `session-closeout` workflow as lightweight sustaining assets
@@ -24,6 +25,7 @@ Use the minimal control surface as the default recovery path and keep it small a
 
 ## Current source of truth
 - `project/DOC_MAP.md`
+- `project/memory/README.md`
 - `AGENTS.md`
 - `ai/doc/facts/project-scope.md` for stable scope and boundary context
 - the current active task spec in `ai/doc/specs/*`, if implementation work is underway
@@ -31,6 +33,7 @@ Use the minimal control surface as the default recovery path and keep it small a
 ## Frozen decisions
 - `project/` is the default name for the root-level human-facing control surface.
 - `project/CURRENT.md` is the recovery-first artifact.
+- `project/memory/*` is the long-lived project-memory layer inside the control surface.
 - The control surface stays intentionally narrow and does not become a broad documentation hub.
 - Supporting templates and closeout guidance exist to keep the control surface current without duplicating execution artifacts.
 
@@ -38,12 +41,13 @@ Use the minimal control surface as the default recovery path and keep it small a
 None yet.
 
 ## Next 3 actions
-1. Keep `project/CURRENT.md` and `project/DOC_MAP.md` small as later changes land.
-2. Use `session-closeout` when future slices may affect current state, decisions, experiments, facts, or skills.
+1. Keep `project/CURRENT.md`, `project/memory/*`, and `project/DOC_MAP.md` small as later changes land.
+2. Use `session-closeout` when future slices may affect current state, memory, decisions, experiments, facts, or skills.
 3. Add new control-surface artifacts only when a repeated recovery problem appears.
 
 ## Risks to watch
 - `project/DOC_MAP.md` could grow into a duplicate navigation layer.
 - `project/CURRENT.md` could drift into a project board instead of staying recovery-focused.
+- `project/memory/*` could drift into a running log or duplicate `ai/doc/facts/*`.
 - Entry wording could blur the boundary between project control and AI execution assets.
 - `ai/doc/facts/project-scope.md` could be treated like a live status file instead of a slower-moving scope fact.

@@ -6,14 +6,18 @@ It is intentionally short.
 ## Start order
 
 1. `project/CURRENT.md` for current status, active slice, next actions, and recovery context.
-2. `README.md` for the repository purpose, adoption model, and top-level navigation.
-3. `AGENTS.md` for repository-level AI operating rules.
-4. `ai/README.md` for the AI workflow namespace map.
+2. `project/memory/README.md` for longer-lived project memory such as agreements and recurring patterns.
+3. `README.md` for the repository purpose, adoption model, and top-level navigation.
+4. `AGENTS.md` for repository-level AI operating rules.
+5. `ai/README.md` for the AI workflow namespace map.
 
 ## Document roles
 
 - `project/CURRENT.md`
   Current human-facing operating state.
+
+- `project/memory/*`
+  Longer-lived project memory that should stay easy to recover without becoming a task log.
 
 - `project/decisions/*`
   Frozen project-level decisions worth re-reading later.
@@ -35,7 +39,8 @@ It is intentionally short.
 When documents appear to overlap, choose the layer that matches the question:
 
 1. For current project state, recovery context, and next durable actions, prefer `project/CURRENT.md`.
-2. For task execution scope, validation, allowed edits, and done conditions, prefer the active task spec in `ai/doc/specs/*`.
-3. For repository-wide operating rules and routing boundaries, prefer `README.md`, `AGENTS.md`, and `ai/README.md`.
-4. For stable reusable context, prefer `ai/doc/facts/*`.
-5. For task-local delivery detail, prefer the change summary or handoff notes.
+2. For longer-lived project agreements, recurring patterns, and repeated reminders, prefer `project/memory/*`.
+3. For task execution scope, validation, allowed edits, and done conditions, prefer the active task spec in `ai/doc/specs/*`.
+4. For repository-wide operating rules and routing boundaries, prefer `README.md`, `AGENTS.md`, and `ai/README.md`.
+5. For stable reusable AI-oriented context, prefer `ai/doc/facts/*`.
+6. For task-local delivery detail, prefer an optional change summary if the project keeps one; otherwise prefer handoff notes.

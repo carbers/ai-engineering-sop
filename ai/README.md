@@ -37,13 +37,12 @@ The canonical namespace roots are singular by design:
 
 Do not create parallel roots such as `ai/docs` or `ai/skills`.
 
-## Use after AI-tool entry
+## Minimal use after AI-tool entry
 
 1. Enter through `../AGENTS.md` or a tool adapter such as `../CLAUDE.md`.
-2. Read `doc/guides/new-project-sop.md` for the default workflow.
-3. Read `doc/specs/README.md` before creating or refining specs.
-4. Use `skill/plan-to-spec.md` when work is moving from plan to implementation.
-5. When preparing a real product release, use `doc/guides/testing-strategy.md` and `doc/templates/release-batch-template.md` for the optional batch-level release check.
+2. Use this file only to decide which `ai/*` area is relevant.
+3. Open only the guide, template, spec, fact, or skill that the current task actually needs.
+4. Do not treat the whole `ai/*` tree as default context.
 
 ## Maintenance rule
 
