@@ -121,22 +121,15 @@ Follow this operating sequence by default:
 5. write back stable reusable context when justified
 6. promote repeated workflows into skills when they stabilize
 
-When a plan or phase slice exists, the default execution path is `plan -> one or more task specs -> spec-bound implementation -> validation`.
-A plan may come from an interactive planning session or a written plan document.
-Use `ai/doc/templates/plan-template.md` only when the plan should become a durable repo artifact worth re-reading, sharing, or handing off.
-Plans may remain temporary. The task spec is the default durable execution artifact for implementation and iteration.
-Once a task spec exists, implement from the spec, not from the parent plan.
-When work spans multiple phases, milestones, or long-running slices, keep the hierarchy explicit as `project_target -> current_target -> phase -> plan -> task`.
-Keep project and phase intent in the planning layer. Do not let task execution quietly redefine those boundaries.
-If iterating within the same reviewable slice, refine the existing spec.
-If the primary outcome, boundary, or validation path changes, create a new dated spec first.
-Only tiny task requests that are already effectively spec-complete and trivially narrow may skip spec creation.
+The default execution path is `plan -> one or more task specs -> spec-bound implementation -> validation`. Plans may come from an interactive session or a written document; use `ai/doc/templates/plan-template.md` only when a plan should become a durable repo artifact. Plans may remain temporary, but the task spec is the default durable execution artifact.
+
+Once a task spec exists, implement from the spec, not from the parent plan. If iterating within the same reviewable slice, refine the existing spec; if the primary outcome, boundary, or validation path changes, create a new dated spec first. Only trivially narrow requests that are already effectively spec-complete may skip spec creation.
+
+When work spans multiple phases, milestones, or long-running slices, keep the hierarchy explicit as `project_target -> current_target -> phase -> plan -> task`, and keep project and phase intent in the planning layer. Task execution must not quietly redefine those boundaries.
 
 ## Task spec rule
 
-Use a task spec by default for implementation work.
-
-Create or refine a spec before editing when one or more of these are true:
+Use a task spec by default for implementation work. Create or refine a spec before editing when any of these are true:
 
 - the task is long-running, multi-step, or likely to span more than one review pass
 - the task has more than one meaningful validation concern, risk, or failure boundary
@@ -145,14 +138,11 @@ Create or refine a spec before editing when one or more of these are true:
 - the task could produce write-back into `project/*`, `ai/doc/facts/*`, or `ai/skill/*`
 - the request is broad enough that the final boundary is not already obvious from the request alone
 
-If those triggers are absent and the request is already effectively spec-complete and trivially narrow, spec creation may still be skipped.
-When a spec exists, reread its scope, edit boundaries, done condition, validation path, and repair or escalation rules before editing.
+If no trigger applies and the request is already effectively spec-complete and trivially narrow, spec creation may be skipped. When a spec exists, reread its scope, edit boundaries, done condition, validation path, and repair or escalation rules before editing.
 
-Durable task specs belong only in `ai/doc/specs/`.
-Do not store task specs under `project/*`, `ai/doc/guides/*`, `ai/doc/templates/*`, `ai/doc/facts/*`, `ai/skill/*`, or ad hoc root-level files.
-If another artifact needs to mention execution scope, link the canonical spec instead of embedding a parallel spec copy.
+Durable task specs belong only in `ai/doc/specs/`, and must not be stored under `project/*`, `ai/doc/guides/*`, `ai/doc/templates/*`, `ai/doc/facts/*`, `ai/skill/*`, or ad hoc root-level files. If another artifact needs to mention execution scope, link the canonical spec instead of embedding a parallel copy.
 
-Use change summaries for task-local delivery notes. They are not a required durable repo artifact and have no canonical repository directory by default. Do not turn them into permanent facts.
+Change summaries carry task-local delivery notes; they have no required repository directory by default and must not become permanent facts.
 
 ## Boundaries
 
@@ -167,16 +157,15 @@ Use change summaries for task-local delivery notes. They are not a required dura
 
 ## Write-back policy
 
-Write back only when the information is both stable and reusable.
+Write back only when the information is both stable and reusable. Good write-back content includes project scope and boundaries, long-lived project memory, stable validation references, stable workflow rules, reusable decision patterns, and repeatable skills.
 
-Good write-back targets include:
+Before writing back, ask:
 
-- current project scope and boundaries
-- stable project-level memory that should influence later work in the same project
-- stable validation references
-- stable workflow rules
-- reusable decision patterns
-- repeatable skills
+1. Will this still matter later?
+2. Can this be reused later?
+3. Does it have a clear destination file?
+
+If the answer is not clearly yes, do not write it back.
 
 Route write-back to the right layer:
 
@@ -185,26 +174,11 @@ Route write-back to the right layer:
 - `ai/skill/*` for repeatable workflows
 - `AGENTS.md` or `.cursor/rules/*` only for repository-wide operating guidance
 
-When adding, removing, or renaming fact files, keep `ai/doc/facts/facts-index.md` in sync.
+When adding, removing, or renaming fact files, keep `ai/doc/facts/facts-index.md` in sync. When adding, removing, or renaming skills, keep `ai/skill/skill-registry.md` in sync.
 
-Do not write back:
+Do not write back temporary debugging chatter, unstable exploration, one-off implementation details, task-local reasoning with no future reuse value, or step-by-step progress notes and validation transcripts that belong in a spec or change summary.
 
-- temporary debugging chatter
-- unstable exploration
-- one-off implementation details
-- task-local reasoning with no future reuse value
-- step-by-step progress notes, validation transcripts, or instant observations that belong in a spec or change summary
-
-Use this rule before writing back:
-
-1. Will this still matter later?
-2. Can this be reused later?
-3. Does it have a clear destination file?
-
-If the answer is not clearly yes, do not write it back.
-
-Facts are stable context, not an archive.
-Project memory is project-facing recovery context, not a task log or a second facts directory.
+Facts are stable context, not an archive. Project memory is project-facing recovery context, not a task log or a second facts directory.
 
 ## Project control sync rule
 

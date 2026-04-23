@@ -1,18 +1,15 @@
 ---
-description: Prevent speculative abstractions and scope expansion
+description: Keep tasks narrow and prevent scope expansion or speculative abstractions
 alwaysApply: true
 ---
 
-# Boundaries Rule
+# Scope and Boundaries Rule
 
-- Do not introduce speculative abstractions.
-- Do not perform opportunistic refactors.
-- Do not edit unrelated modules in the same task unless required for compilation or contract alignment.
-- Do not implement future-phase work during current-phase tasks.
-- If task or sub-plan execution would expand project scope or phase scope, stop for an explicit replan or decision instead of absorbing the work into the current slice.
+Canonical source: `AGENTS.md` section `Boundaries`.
+
+Execution-critical reminders:
+- One task, one primary reviewable outcome. If a task mixes design, implementation, migration, and cleanup, split it and choose the smallest path that fits the current phase.
+- Do not introduce speculative abstractions, opportunistic refactors, or edits to unrelated modules unless required for compilation or contract alignment. Do not implement future-phase work during current-phase tasks.
+- If narrowing the task would require changing the current spec boundary, project scope, or phase boundary, stop for `replan_required` or `needs_decision` instead of quietly redefining the task.
 - If missing policy, dependency, or priority choices appear, return `needs_decision` or `replan_required` instead of inventing them locally.
-- Prefer existing structures over creating parallel systems.
-- Narrow ambiguous work instead of expanding design scope.
-- Keep AI-managed workflow assets under `ai/`.
-- Keep project-facing documentation outside `ai/`.
-- Use the canonical singular roots `ai/doc` and `ai/skill`; do not create parallel roots such as `ai/docs` or `ai/skills`.
+- Keep AI-managed workflow assets under `ai/`; keep project-facing documentation outside `ai/`. Use the canonical singular roots `ai/doc` and `ai/skill` only; do not create parallel roots such as `ai/docs` or `ai/skills`.

@@ -5,44 +5,10 @@ alwaysApply: true
 
 # Write-back Rule
 
-Write back only stable, reusable information.
+Canonical source: `AGENTS.md` sections `Write-back policy` and `Project control sync rule`.
 
-Before writing back, ask:
-- will this still matter later?
-- is it reusable later?
-- does it have a clear home?
-
-If the answer is not clearly yes, do not write it back.
-
-## Write back when
-- current operating state, active slice, or next durable actions became misleading in `project/CURRENT.md`
-- longer-lived project memory, a frozen decision, or an experiment result should stay easy to recover under `project/*`
-- project scope or boundaries became clearer
-- a validation reference became reusable
-- a workflow rule became stable enough to reuse
-- a repeated procedure should become or update a skill
-
-## Write back to
-- `project/CURRENT.md` for current operating state
-- `project/memory/*` for long-lived project-specific memory
-- `project/DOC_MAP.md` only when reading order or document roles changed
-- `project/decisions/*` for frozen project-level decisions
-- `project/experiments/*` for readable experiment summaries
-- `ai/doc/facts/*` for stable project context
-- `ai/skill/*` for reusable procedures
-- `AGENTS.md` or rules only for repository-wide guidance
-- change summaries or handoff notes only for task-local delivery detail; there is no required repository directory for them by default
-
-Use write-back labels such as `project_memory`, `facts_update`, `skill_promotion`, `decision_rationale`, `phase_lesson`, `task_pattern`, and `anti_pattern` only as routing hints.
-Do not let the taxonomy create a new archive of task history.
-
-When adding, removing, or renaming fact files, update `ai/doc/facts/facts-index.md`.
-When adding, removing, or renaming skill files, update `ai/skill/skill-registry.md`.
-
-## Do not write back
-- temporary debugging notes
-- unstable experiments
-- one-off implementation chatter
-- details that are only useful for the current task
-
-Facts are stable context, not an archive.
+Execution-critical reminders:
+- Before writing back, ask: will this still matter later? is it reusable later? does it have a clear home? If the answer is not clearly yes, do not write back.
+- Route to the right layer: `project/CURRENT.md` for current operating state, `project/memory/*` for long-lived project memory, `project/decisions/*` for frozen decisions, `project/experiments/*` for experiment summaries, `ai/doc/facts/*` for stable reusable project context, `ai/skill/*` for reusable procedures, `AGENTS.md` or `.cursor/rules/*` only for repository-wide guidance.
+- Facts are stable context, not an archive. Project memory is recovery context, not a running log or a duplicate facts store.
+- When adding, removing, or renaming facts or skills, update `ai/doc/facts/facts-index.md` or `ai/skill/skill-registry.md` in the same change.

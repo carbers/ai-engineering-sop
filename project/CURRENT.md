@@ -24,20 +24,13 @@ Use the minimal control surface as the default recovery path and keep it small a
 - duplicating execution detail that already belongs in specs, facts, or skills
 
 ## Current source of truth
-- `project/DOC_MAP.md`
-- `project/memory/README.md`
-- `project/decisions/DEC-20260422-001-project-control-surface.md`
-- `AGENTS.md`
-- `ai/skill/execute-from-spec.md` for spec-bound implementation
-- `ai/doc/facts/project-scope.md` for stable scope and boundary context
-- the current active task spec in `ai/doc/specs/*`, if implementation work is underway
+- `project/DOC_MAP.md` for reading order across the control surface
+- `AGENTS.md` for repository-level operating rules
+- `project/decisions/DEC-20260422-001-project-control-surface.md` for the active frozen control-surface decision
+- The current active task spec under `ai/doc/specs/*`, when implementation is underway
 
 ## Frozen decisions
-- `project/decisions/DEC-20260422-001-project-control-surface.md` keeps the current control-surface model in force.
-- `project/` is the default root-level human-facing control surface.
-- `project/CURRENT.md` is the recovery-first artifact.
-- `project/memory/*` is the long-lived project-memory layer inside the control surface.
-- The control surface stays intentionally narrow and does not become a broad documentation hub.
+- `project/decisions/DEC-20260422-001-project-control-surface.md` — `project/` is the default root-level human-facing control surface, with `project/CURRENT.md` as the recovery-first artifact and `project/memory/*` as the long-lived project-memory layer. The control surface stays intentionally narrow and does not become a broad documentation hub.
 
 ## Latest experiment
 None yet.
@@ -48,8 +41,6 @@ None yet.
 3. Keep `project/CURRENT.md`, `project/memory/*`, and `project/DOC_MAP.md` small as later changes land.
 
 ## Risks to watch
-- `project/DOC_MAP.md` could grow into a duplicate navigation layer.
-- `project/CURRENT.md` could drift into a project board instead of staying recovery-focused.
-- `project/memory/*` could drift into a running log or duplicate `ai/doc/facts/*`.
-- Entry wording could blur the boundary between project control and AI execution assets.
-- `ai/doc/facts/project-scope.md` could be treated like a live status file instead of a slower-moving scope fact.
+- `project/CURRENT.md` or `project/DOC_MAP.md` drifting into a project board or duplicate navigation layer instead of staying recovery-focused.
+- `project/memory/*` drifting into a running log or duplicate of `ai/doc/facts/*`.
+- `ai/doc/facts/project-scope.md` treated like a live status file instead of a slower-moving scope fact.
