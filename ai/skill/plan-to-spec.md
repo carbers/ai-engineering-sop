@@ -35,6 +35,7 @@ When the work is phase-aware, also capture:
 - white-box trigger judgment
 - write-back guidance
 - optional `release_sensitive` signal when a future real-product release may need batch-level review
+- an execution handoff to `ai/skill/execute-from-spec.md` when implementation should begin
 
 For longer-running or dependency-heavy work, also make explicit:
 - `Parent Phase`
@@ -48,6 +49,7 @@ For longer-running or dependency-heavy work, also make explicit:
 
 Name and store specs using the conventions in `ai/doc/specs/README.md`.
 Do not emit durable task specs into guides, templates, `project/*`, facts, skills, or ad hoc scratch files.
+After a spec is ready for implementation, execute from the spec through `ai/skill/execute-from-spec.md`; do not return to the parent plan as the implementation source of truth.
 
 ## Workflow
 
@@ -92,6 +94,10 @@ Leave ordinary tasks on `normal`.
 ### 10. Add failure boundaries only when they help
 For long-running, dependency-heavy, or repair-sensitive work, specify repair budget, rollback scope, and escalation conditions.
 Keep these fields short on trivially narrow tasks.
+
+### 11. Hand off to execution
+When implementation should start, hand the ready spec to `ai/skill/execute-from-spec.md`.
+The parent plan remains intent context; the active spec is the execution contract.
 
 ## Common failure modes
 - turning the plan directly into one giant spec

@@ -65,6 +65,7 @@ What existing artifacts, dependencies, assumptions, or repo context must already
 ## Expected Outputs
 Optional for phase-aware, dependency-heavy, or multi-handoff work.
 What concrete deliverables should this task produce?
+This is a deliverable list, not the acceptance test. Use `Done When` for reviewable completion conditions.
 
 ## In Scope
 What is included in this task?
@@ -75,23 +76,32 @@ What is explicitly excluded from this task?
 ## Allowed Edits
 Optional for phase-aware, dependency-heavy, or multi-handoff work.
 Which files, modules, docs, or workflow assets may be edited in this task?
+This is the permission boundary for execution.
 
 ## Disallowed Edits
 Optional for phase-aware, dependency-heavy, or multi-handoff work.
 Which areas must remain untouched unless the task is explicitly replanned?
 
+## Frozen / Dual-Track Constraints
+Optional. Use only when relevant.
+Name any frozen bytes, generated outputs, compatibility tracks, or dual-track artifacts that must not be changed unless this spec explicitly allows it.
+If a dual-track path is introduced, include the exit condition or state that a separate decision/replan is required.
+
 ## Affected Area
 Which files, modules, or subsystems should be touched?
+This is the expected touch surface. It may be narrower than `Allowed Edits`.
 
 ## Task Checklist
 Use a short Markdown checkbox list. Keep it narrow, usually 3-7 items.
 Checklist completion does not make the spec `done` by itself. Required validation must also pass.
+Use outcome-oriented items only. Do not use the checklist as a running log, validation transcript, or project board.
 
 - [ ] Example outcome-oriented task
 - [ ] Example outcome-oriented task
 
 ## Done When
 What reviewable outcome must be true when this task is complete?
+This is the acceptance condition. It should be reviewable independently from the implementation steps.
 
 ## Validation
 
@@ -134,6 +144,8 @@ Suggested labels:
 - `phase_lesson`
 - `task_pattern`
 - `anti_pattern`
+
+These labels are routing hints, not required destinations or file categories.
 
 ## Risks / Notes
 What should reviewers or implementers watch for?

@@ -37,6 +37,8 @@ If the project uses project memory and it currently shapes execution, include `p
 
 ## Frozen decisions
 Which durable project-level choices are currently in force?
+Prefer short pointers to decision records in `project/decisions/*`.
+Do not use bold text or repeated emphasis as a substitute for cleaning stale decisions out of this file.
 
 ## Latest experiment
 Which experiment record matters most right now, if any?

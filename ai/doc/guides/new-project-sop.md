@@ -53,15 +53,19 @@ The smallest practical copied-project set is:
 - `ai/doc/specs/README.md`
 - `ai/doc/facts/facts-index.md`
 - `ai/skill/plan-to-spec.md`
+- `ai/skill/execute-from-spec.md`
 - `ai/skill/design-whitebox-tests.md`
 
 Add more files only when they solve a real current need.
+`ai/skill/autopilot.md` is advanced and on-demand; keep it only when the project explicitly wants bounded autonomous execution.
 
 If you want the guided first-use path to remain available after copying, also keep:
 
 - `ai/doc/guides/new-project-sop.md`
 - `ai/doc/guides/testing-strategy.md`
 - `ai/doc/guides/task-lifecycle-and-escalation.md`
+- `ai/skill/replan-or-escalate.md`
+- `ai/skill/decision-recording.md`
 - `ai/doc/templates/release-batch-template.md` when the project will prepare real product releases and wants a lightweight batch-level release check
 - `ai/doc/specs/20260104-001-example-first-copied-project-quickstart.md`
 - `ai/doc/guides/phase-aware-workflow.md` when long-task guidance is needed
@@ -114,10 +118,11 @@ If you keep the guided first-use files, that example also links to concrete `mai
 
 ### 3. Derive task specs
 Use `ai/skill/plan-to-spec.md`, `ai/doc/specs/README.md`, and `ai/doc/templates/task-spec-template.md`.
+When a spec is ready to execute, use `ai/skill/execute-from-spec.md` so implementation stays bound to the spec rather than the parent plan.
 
 A task spec should shrink the plan into a narrow implementation contract.
 See `ai/doc/specs/README.md` for naming, splitting, and lifecycle conventions.
-For longer-running work, also use `ai/doc/guides/task-lifecycle-and-escalation.md` so repair, rollback, replan, and escalation stay explicit.
+For longer-running work, also use `ai/doc/guides/task-lifecycle-and-escalation.md` and `ai/skill/replan-or-escalate.md` so repair, rollback, replan, and escalation stay explicit.
 When a returning human needs to recover the current state before entering the active spec, start with `project/CURRENT.md`.
 If the project uses project memory, read `project/memory/README.md` next for longer-lived agreements and recurring patterns.
 
@@ -156,6 +161,8 @@ After implementation and validation, create or update:
 - `ai/doc/facts/project-scope.md` when scope or boundaries became clearer
 - `ai/doc/facts/golden-cases.md` when stable reusable validation references are worth preserving
 - `ai/skill/*` when a repeated workflow has stabilized and should be reused later
+
+Use `ai/skill/decision-recording.md` when a frozen project-level decision needs a concise recoverable record.
 
 Write back only stable, reusable context.
 Do not turn every task discussion into permanent docs.

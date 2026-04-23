@@ -103,7 +103,7 @@ The smallest practical starting point is:
 4. keep `ai/doc/templates/*`
 5. keep `ai/doc/specs/README.md`
 6. keep `ai/doc/facts/facts-index.md`
-7. keep the two initial skills: `ai/skill/plan-to-spec.md` and `ai/skill/design-whitebox-tests.md`
+7. keep the core initial skills: `ai/skill/plan-to-spec.md`, `ai/skill/execute-from-spec.md`, and `ai/skill/design-whitebox-tests.md`
 8. create a first plan in your planning workflow, then initialize `ai/doc/facts/project-scope.md` when stable scope is clear
 
 That list is the bare minimum.
@@ -124,6 +124,8 @@ If you want the guided first-use path to remain available after copying, also ke
 - `ai/doc/guides/new-project-sop.md`
 - `ai/doc/guides/testing-strategy.md`
 - `ai/doc/guides/task-lifecycle-and-escalation.md`
+- `ai/skill/replan-or-escalate.md`
+- `ai/skill/decision-recording.md`
 - `ai/doc/templates/release-batch-template.md` when the project will prepare real product releases and wants a lightweight batch-level release check
 - `ai/doc/specs/20260104-001-example-first-copied-project-quickstart.md` when you want the small-task example
 - `ai/doc/guides/phase-aware-workflow.md` when long-task guidance is needed
@@ -138,6 +140,8 @@ If you want the guided first-use path to remain available after copying, also ke
 4. Persist a written plan only if the phase, handoff, or checkpoint structure is worth re-reading later. Otherwise move directly to the first spec.
 5. Derive the first task spec with the [specs guide](ai/doc/specs/README.md) and the [task spec template](ai/doc/templates/task-spec-template.md).
 6. Implement from the spec, validate explicitly, and write back only stable reusable context.
+
+`ai/skill/autopilot.md` is an advanced, on-demand execution discipline for bounded autonomous work. Do not include it in the default copied-project set unless your team explicitly wants that mode.
 
 If you want the copied-project walkthrough, read the [new-project SOP guide](ai/doc/guides/new-project-sop.md).
 If you want a copyable example of the minimal control-surface loop, read [20260328-003-example-project-control-closeout-loop.md](ai/doc/specs/20260328-003-example-project-control-closeout-loop.md).

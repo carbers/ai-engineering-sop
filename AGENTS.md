@@ -98,10 +98,11 @@ Follow this operating sequence by default:
 5. write back stable reusable context when justified
 6. promote repeated workflows into skills when they stabilize
 
-When a plan or phase slice exists, the default execution path is `plan -> one or more task specs -> implementation -> validation`.
+When a plan or phase slice exists, the default execution path is `plan -> one or more task specs -> spec-bound implementation -> validation`.
 A plan may come from an interactive planning session or a written plan document.
 Use `ai/doc/templates/plan-template.md` only when the plan should become a durable repo artifact worth re-reading, sharing, or handing off.
 Plans may remain temporary. The task spec is the default durable execution artifact for implementation and iteration.
+Once a task spec exists, implement from the spec, not from the parent plan.
 When work spans multiple phases, milestones, or long-running slices, keep the hierarchy explicit as `project_target -> current_target -> phase -> plan -> task`.
 Keep project and phase intent in the planning layer. Do not let task execution quietly redefine those boundaries.
 If iterating within the same reviewable slice, refine the existing spec.
@@ -122,6 +123,7 @@ Create or refine a spec before editing when one or more of these are true:
 - the request is broad enough that the final boundary is not already obvious from the request alone
 
 If those triggers are absent and the request is already effectively spec-complete and trivially narrow, spec creation may still be skipped.
+When a spec exists, reread its scope, edit boundaries, done condition, validation path, and repair or escalation rules before editing.
 
 Durable task specs belong only in `ai/doc/specs/`.
 Do not store task specs under `project/*`, `ai/doc/guides/*`, `ai/doc/templates/*`, `ai/doc/facts/*`, `ai/skill/*`, or ad hoc root-level files.

@@ -4,6 +4,7 @@ Use this guide when a task needs explicit lifecycle, repair, rollback, or escala
 
 This guide keeps failure handling readable in SOP form.
 It does not define an automated runtime state machine.
+Use `ai/skill/replan-or-escalate.md` when an active execution needs to choose between repair, rollback, replan, or a decision stop.
 
 ## Steady-State Status Values
 

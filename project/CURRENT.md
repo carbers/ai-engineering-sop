@@ -26,24 +26,26 @@ Use the minimal control surface as the default recovery path and keep it small a
 ## Current source of truth
 - `project/DOC_MAP.md`
 - `project/memory/README.md`
+- `project/decisions/DEC-20260422-001-project-control-surface.md`
 - `AGENTS.md`
+- `ai/skill/execute-from-spec.md` for spec-bound implementation
 - `ai/doc/facts/project-scope.md` for stable scope and boundary context
 - the current active task spec in `ai/doc/specs/*`, if implementation work is underway
 
 ## Frozen decisions
-- `project/` is the default name for the root-level human-facing control surface.
+- `project/decisions/DEC-20260422-001-project-control-surface.md` keeps the current control-surface model in force.
+- `project/` is the default root-level human-facing control surface.
 - `project/CURRENT.md` is the recovery-first artifact.
 - `project/memory/*` is the long-lived project-memory layer inside the control surface.
 - The control surface stays intentionally narrow and does not become a broad documentation hub.
-- Supporting templates and closeout guidance exist to keep the control surface current without duplicating execution artifacts.
 
 ## Latest experiment
 None yet.
 
 ## Next 3 actions
-1. Keep `project/CURRENT.md`, `project/memory/*`, and `project/DOC_MAP.md` small as later changes land.
+1. Execute implementation from active specs through `ai/skill/execute-from-spec.md`.
 2. Use `session-closeout` when future slices may affect current state, memory, decisions, experiments, facts, or skills.
-3. Add new control-surface artifacts only when a repeated recovery problem appears.
+3. Keep `project/CURRENT.md`, `project/memory/*`, and `project/DOC_MAP.md` small as later changes land.
 
 ## Risks to watch
 - `project/DOC_MAP.md` could grow into a duplicate navigation layer.
