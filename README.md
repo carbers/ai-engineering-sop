@@ -103,8 +103,8 @@ The smallest practical starting point is:
 4. keep `ai/doc/templates/*`
 5. keep `ai/doc/specs/README.md`
 6. keep `ai/doc/facts/facts-index.md`
-7. keep the core initial skills: `ai/skill/plan-to-spec.md`, `ai/skill/execute-from-spec.md`, and `ai/skill/design-whitebox-tests.md`
-8. create a first plan in your planning workflow, then initialize `ai/doc/facts/project-scope.md` when stable scope is clear
+7. keep the core initial skills: `ai/skill/init-project-from-brief.md`, `ai/skill/plan-to-spec.md`, `ai/skill/execute-from-spec.md`, and `ai/skill/design-whitebox-tests.md`
+8. run `ai/skill/init-project-from-brief.md` with your project brief so `AGENTS.md`, `README.md`, `project/CURRENT.md`, and `ai/doc/facts/project-scope.md` reflect the real project before you start planning
 
 That list is the bare minimum.
 If you also want the recommended recovery-first control surface for humans, keep:
@@ -126,7 +126,7 @@ If the target project runs on Plastic SCM (Unity Version Control), also keep:
 - `ai/doc/templates/cursorignore-template.md`
 - `ai/doc/templates/agents-version-control-section.md`
 
-Run `ai/skill/init-plastic-scm.md` on first entry into such a project before any implementation work. Projects on other backends do not need this bootstrap.
+On first entry into such a project, running `ai/skill/init-project-from-brief.md` will delegate to `ai/skill/init-plastic-scm.md` automatically when `.plastic/plastic.selector` is detected. Run `ai/skill/init-plastic-scm.md` directly only when you want the VCS bootstrap in isolation. Projects on other backends do not need this bootstrap.
 
 If you want the guided first-use path to remain available after copying, also keep:
 
@@ -142,13 +142,12 @@ If you want the guided first-use path to remain available after copying, also ke
 
 ## Copy Into A Real Project In 10 Minutes
 
-1. Copy the minimal adoption set into the real project. If you want this guided walkthrough to remain available inside the copied project, also copy the guided first-use files listed above. Keep the split entrypoints: root `README.md` for humans, `AGENTS.md` for AI tools, and `ai/README.md` for the `ai/*` namespace.
-  If you want a recovery-first control surface for humans, copy `project/README.md`, `project/decisions/`, `project/experiments/`, and the starter memory pages under `project/memory/*` together with `ai/doc/templates/current-template.md`, `ai/doc/templates/doc-map-template.md`, `ai/doc/templates/project-memory-readme-template.md`, `ai/doc/templates/project-memory-page-template.md`, and `ai/skill/session-closeout.md`. Then initialize `project/CURRENT.md` from `ai/doc/templates/current-template.md` and `project/DOC_MAP.md` from `ai/doc/templates/doc-map-template.md`, and keep the copied memory pages as empty scaffolding until real repeated project memory exists. Start with `project/CURRENT.md` and `project/memory/README.md`.
-2. Decide whether the first slice is a `small task / narrow change` or a `long task / multi-phase / multi-handoff`.
-3. Clarify the first reviewable slice in your normal planning workflow.
+1. Copy the minimal adoption set into the real project. Keep the split entrypoints: root `README.md` for humans, `AGENTS.md` for AI tools, and `ai/README.md` for the `ai/*` namespace. If you want a recovery-first control surface for humans, also copy `project/README.md`, `project/decisions/`, `project/experiments/`, the starter memory pages under `project/memory/*`, the control-surface templates listed above, and `ai/skill/session-closeout.md`.
+2. Run `ai/skill/init-project-from-brief.md` with your project brief. It personalizes `AGENTS.md` and `README.md` identity blocks, initializes `project/CURRENT.md` and `project/DOC_MAP.md`, seeds `ai/doc/facts/project-scope.md`, and delegates to `ai/skill/init-plastic-scm.md` when `.plastic/plastic.selector` is present. If you do not have a brief yet, it falls back to a structured Q&A for the required fields before editing anything.
+3. Decide whether the first slice is a `small task / narrow change` or a `long task / multi-phase / multi-handoff`.
 4. Persist a written plan only if the phase, handoff, or checkpoint structure is worth re-reading later. Otherwise move directly to the first spec.
-5. Derive the first task spec with the [specs guide](ai/doc/specs/README.md) and the [task spec template](ai/doc/templates/task-spec-template.md).
-6. Implement from the spec, validate explicitly, and write back only stable reusable context.
+5. Derive the first task spec with `ai/skill/plan-to-spec.md`, the [specs guide](ai/doc/specs/README.md), and the [task spec template](ai/doc/templates/task-spec-template.md).
+6. Implement from the spec via `ai/skill/execute-from-spec.md`, validate explicitly, and write back only stable reusable context.
 
 `ai/skill/autopilot.md` is an advanced, on-demand execution discipline for bounded autonomous work. Do not include it in the default copied-project set unless your team explicitly wants that mode.
 
@@ -174,7 +173,7 @@ This repository is not:
 4. if you are wiring AI workflow assets, read `ai/README.md`
 5. for the default lightweight path, read `ai/doc/specs/README.md`
 6. for the phase-aware long-task path, read `ai/doc/guides/phase-aware-workflow.md` and `ai/doc/guides/phase-aware-canonical-example.md`
-7. for a copied-project walkthrough, read `ai/doc/guides/new-project-sop.md` only when you need the guided first-use path
+7. for a copied-project first-use, run `ai/skill/init-project-from-brief.md`; the [new-project SOP guide](ai/doc/guides/new-project-sop.md) is the prose companion for readers who prefer to walk the flow manually
 8. create or refine a first plan, using `ai/doc/templates/plan-template.md` only when you want a durable written plan
 
 When design, planning, and execution are split across different tools or roles, also see `ai/doc/guides/design-to-spec-handoff.md` and the prompt scaffolds in `ai/doc/templates/design-to-planner-prompt-template.md` and `ai/doc/templates/spec-to-executor-prompt-template.md`.

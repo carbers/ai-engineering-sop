@@ -84,7 +84,9 @@ When the workspace is Plastic SCM:
 
 ### Bootstrap
 
-When a copied project is on Plastic SCM, run `ai/skill/init-plastic-scm.md` before any implementation work. The init skill generates `ignore.conf`, `.cursorignore`, a project-specific `## Version control` section for the project's own `AGENTS.md`, and removes leftover `.gitignore` and `.gitkeep` files. Other backends do not have a bootstrap skill in this starter; document the chosen backend in the project's `AGENTS.md` and `project/CURRENT.md` manually.
+On first entry into a freshly copied SOP starter, run `ai/skill/init-project-from-brief.md` before any planning or implementation work. The skill personalizes `AGENTS.md` and `README.md` identity blocks, initializes `project/CURRENT.md` and `project/DOC_MAP.md`, seeds `ai/doc/facts/project-scope.md`, delegates to `ai/skill/init-plastic-scm.md` when `.plastic/plastic.selector` is present, and hands off to `ai/skill/plan-to-spec.md`.
+
+When a copied project is on Plastic SCM and `init-project-from-brief` has not yet been run, `ai/skill/init-plastic-scm.md` may be invoked directly to avoid Cursor's default `cm diff` GUI behavior. Other backends do not have a bootstrap skill in this starter; document the chosen backend in the project's `AGENTS.md` and `project/CURRENT.md` manually.
 
 ## Entrypoint model
 

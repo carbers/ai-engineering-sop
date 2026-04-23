@@ -1,48 +1,33 @@
 # New Project SOP
 
-Use this SOP when starting a new project or when introducing structure into an existing project.
-This is an on-demand guide, not part of the minimum default context.
+Short human-reading reference for the copied-project first-use path.
+The executable path lives in `ai/skill/init-project-from-brief.md`; this guide is the prose companion for readers who prefer to walk the flow manually.
 
-## First Use In A Copied Project
+## The Default Path
 
-Use this as the copied-project quickstart:
+When you copy this starter into a new project:
 
-1. keep the entrypoints split: root `README.md` for humans, `AGENTS.md` and adapters for AI tools, `ai/README.md` for the `ai/*` namespace
-2. keep the minimal starter set from `README.md`
-3. decide whether the first slice is a default `small task` or a `phase-aware` long task
-4. clarify the first reviewable slice in the planning workflow you already use
-5. write a durable plan only if the current phase or handoff structure is worth re-reading later
-6. derive the first narrow task spec before implementation
-7. validate explicitly and write back only stable reusable context
+1. Run `ai/skill/init-project-from-brief.md` with your project brief.
+ The skill personalizes `AGENTS.md` and `README.md`, seeds `project/CURRENT.md`, `project/DOC_MAP.md`, and `ai/doc/facts/project-scope.md`, delegates to `ai/skill/init-plastic-scm.md` when the workspace is Plastic SCM, and hands off to `ai/skill/plan-to-spec.md`.
+2. Derive the first task spec with `ai/skill/plan-to-spec.md`.
+3. Implement from the spec with `ai/skill/execute-from-spec.md`.
+4. Validate explicitly.
+5. Close out deliberately with `ai/skill/session-closeout.md` when the result changed current state, memory, decisions, experiments, facts, or skills.
 
-The starter should stay lightweight on day one.
-Do not create every optional artifact up front.
+If you do not have a brief yet, the skill will fall back to a structured Q&A for the required fields before editing anything.
 
 ## Entrypoints In Copied Projects
 
-When this starter is copied into a real project, keep the entrypoints split:
+Keep the entrypoints split:
 
-- let the root `README.md` become the human-facing project entrypoint
-- keep `AGENTS.md` and any tool adapters as AI-tool entrypoints
-- keep `ai/README.md` as the namespace map for AI workflow assets
-- keep project-facing docs outside `ai/`
-- when human readers need a recovery-first current-state view, use a root-level `project/` control surface and start with `project/CURRENT.md`
-  If you adopt that control surface, keep `project/README.md`, `project/decisions/`, `project/experiments/`, and the starter memory pages under `project/memory/*`, plus `ai/doc/templates/current-template.md`, `ai/doc/templates/doc-map-template.md`, `ai/doc/templates/project-memory-readme-template.md`, `ai/doc/templates/project-memory-page-template.md`, and `ai/skill/session-closeout.md`. Initialize `project/CURRENT.md` and `project/DOC_MAP.md` from the templates in the copied project so the control surface starts with project-specific state rather than this repository's example state, and keep the copied memory pages as empty scaffolding until real repeated project memory exists.
+- root `README.md` for humans
+- `AGENTS.md` and any tool adapters for AI tools
+- `ai/README.md` for the `ai/*` namespace
 
-## Default startup order
+When human readers need a recovery-first current-state view, keep the root-level `project/` control surface and start with `project/CURRENT.md`.
+If you adopt that control surface, keep `project/README.md`, `project/decisions/`, `project/experiments/`, the starter memory pages under `project/memory/*`, and `ai/skill/session-closeout.md` so the control surface stays current without duplicating execution artifacts.
 
-1. clarify the project at a plan level
-2. derive one or more task specs from the plan
-3. implement narrowly
-4. validate explicitly
-5. write back stable reusable context when justified
-6. promote repeatable workflows into skills when justified
-
-The default path stays lightweight.
-Only move into the phase-aware variant when the work is long-running enough to need explicit phase, plan, and task hierarchy.
-If you want to see one complete long-task chain before copying the pattern, read `ai/doc/guides/phase-aware-canonical-example.md`.
-
-## What To Keep On Day One
+## Day-One Minimal Set
 
 The smallest practical copied-project set is:
 
@@ -52,6 +37,7 @@ The smallest practical copied-project set is:
 - `ai/doc/templates/*`
 - `ai/doc/specs/README.md`
 - `ai/doc/facts/facts-index.md`
+- `ai/skill/init-project-from-brief.md`
 - `ai/skill/plan-to-spec.md`
 - `ai/skill/execute-from-spec.md`
 - `ai/skill/design-whitebox-tests.md`
@@ -66,147 +52,68 @@ If the target project runs on Plastic SCM (Unity Version Control), also keep:
 - `ai/doc/templates/cursorignore-template.md`
 - `ai/doc/templates/agents-version-control-section.md`
 
-On first entry into such a project, run `ai/skill/init-plastic-scm.md` before any implementation work so the project gains correct `ignore.conf`, `.cursorignore`, and a project-specific `## Version control` section in its own `AGENTS.md`. Projects on other backends do not need this bootstrap.
+`init-project-from-brief` will call `init-plastic-scm` automatically when `.plastic/plastic.selector` is present. Projects on other backends do not need a VCS bootstrap.
 
-If you want the guided first-use path to remain available after copying, also keep:
+If you want the guided path reference files and optional examples, also keep:
 
-- `ai/doc/guides/new-project-sop.md`
+- `ai/doc/guides/new-project-sop.md` (this guide)
 - `ai/doc/guides/testing-strategy.md`
 - `ai/doc/guides/task-lifecycle-and-escalation.md`
 - `ai/skill/replan-or-escalate.md`
 - `ai/skill/decision-recording.md`
-- `ai/doc/templates/release-batch-template.md` when the project will prepare real product releases and wants a lightweight batch-level release check
-- `ai/doc/specs/20260104-001-example-first-copied-project-quickstart.md`
+- `ai/skill/session-closeout.md`
+- `ai/doc/templates/release-batch-template.md` when the project will prepare real product releases
+- `ai/doc/specs/20260104-001-example-first-copied-project-quickstart.md` as a small-task example
 - `ai/doc/guides/phase-aware-workflow.md` when long-task guidance is needed
-- `ai/doc/guides/phase-aware-canonical-example.md`
-- `ai/doc/guides/phase-aware-example-main-plan.md`
-- `ai/doc/guides/phase-aware-example-sub-plan.md`
-- `ai/doc/specs/20260103-001-example-adoption-entrypoint-slice.md`
+- `ai/doc/guides/phase-aware-canonical-example.md`, `ai/doc/guides/phase-aware-example-main-plan.md`, `ai/doc/guides/phase-aware-example-sub-plan.md`, and `ai/doc/specs/20260103-001-example-adoption-entrypoint-slice.md` when you want the closed long-task example
 
-## Startup checklist
+## Plan Vs Spec
 
-### 1. Establish the current phase
-Before coding, clarify:
+`init-project-from-brief` produces the project identity and control-surface seeds. It does not produce a plan or a spec.
 
-- what this phase must achieve
-- what this phase explicitly will not do
-- the main constraints
-- the first reviewable slice
-
-### 2. Establish the first plan
-First establish the plan in the planning workflow you actually use.
-A written plan document is optional.
-Use `ai/doc/templates/plan-template.md` only when the plan should become a durable repo artifact worth re-reading, sharing, or handing off.
-By default, persist the task spec rather than the plan.
-
-Use a durable written plan when one or more of these are true:
-- the current phase needs checkpoints, dependencies, or handoff context that should survive later re-reading
-- multiple people or models need to align on the same phase slice
-- the work is long-running enough that the next task is not obvious without the parent plan
-
-Skip the durable plan when:
-- the first slice is already clear enough to narrow directly into one reviewable spec
-- writing the plan would only restate what the current task request already says
-
-The plan should clarify:
-- problem
-- goal
-- non-goals
-- constraints
-- risks
-- phased direction
-- first slice
-
-If the plan is already clear from an interactive planning session, move directly to spec derivation.
-Do not force a second written plan unless it adds durable value.
-
-When the work spans multiple milestones, dependencies, or long-lived handoffs, use the phase-aware guidance in `ai/doc/guides/phase-aware-workflow.md`.
-That guide explains how to keep `project_target`, `current_target`, `phase`, `main_plan`, `sub_plan`, and `task` aligned without replacing the default spec-first workflow.
-Use `ai/doc/guides/phase-aware-canonical-example.md` when you want a compact, copyable example of that chain.
-If you keep the guided first-use files, that example also links to concrete `main_plan` and `sub_plan` artifacts you can copy directly.
-
-### 3. Derive task specs
-Use `ai/skill/plan-to-spec.md`, `ai/doc/specs/README.md`, and `ai/doc/templates/task-spec-template.md`.
-When a spec is ready to execute, use `ai/skill/execute-from-spec.md` so implementation stays bound to the spec rather than the parent plan.
+Write a durable plan under `ai/doc/templates/plan-template.md` only when the phase, handoff, or checkpoint structure is worth re-reading later.
+Otherwise move directly to `plan-to-spec` with the brief as plan-level input.
 
 A task spec should shrink the plan into a narrow implementation contract.
 See `ai/doc/specs/README.md` for naming, splitting, and lifecycle conventions.
 For longer-running work, also use `ai/doc/guides/task-lifecycle-and-escalation.md` and `ai/skill/replan-or-escalate.md` so repair, rollback, replan, and escalation stay explicit.
-When a returning human needs to recover the current state before entering the active spec, start with `project/CURRENT.md`.
-If the project uses project memory, read `project/memory/README.md` next for longer-lived agreements and recurring patterns.
 
-For the first copied-project slice:
-- start with one spec, not a batch of specs
-- make the first spec small enough to review in one pass
-- use the phase-aware fields only when they make the current slice easier to hand off or recover
+## Validation
 
-If you want a copyable default-path example, see `ai/doc/specs/20260104-001-example-first-copied-project-quickstart.md`.
-If you want a copyable example that includes the minimal control-surface closeout path, see `ai/doc/specs/20260328-003-example-project-control-closeout-loop.md`.
-
-### 4. Decide starter/code skeleton work deliberately
-Project starter work is a result of planning, not a global precondition.
-Do not assume a fixed technology stack.
-Only define code skeleton and starter structure after the plan has made the current needs clear.
-
-### 5. Validate in layers
-- use black-box validation by default
+- black-box validation by default
 - add white-box validation when triggered by internal complexity or regression sensitivity
 
-See `ai/doc/guides/testing-strategy.md`.
+See `ai/doc/guides/testing-strategy.md` for the trigger criteria.
 
-For the first copied-project slice, prefer validation that a reviewer can quickly inspect:
-- what user-visible behavior changed
-- what check proves the slice is done
-- whether any internal regression path also needs protection
+## Write-back
 
-### 6. Write back stable reusable context
-After implementation and validation, create or update:
+After implementation and validation, create or update only what is stable and reusable:
 
-- `project/CURRENT.md` when the current operating state or next durable actions changed
-- `project/memory/*` when stable project-facing memory should keep influencing later work in this project
+- `project/CURRENT.md` when current operating state or next durable actions changed
+- `project/memory/*` when stable project-facing memory should keep influencing later work
 - `project/DOC_MAP.md` when the normal reading order or document roles changed
-- `project/decisions/*` when a durable project-level choice was frozen
-- `project/experiments/*` when a real experiment produced a reusable result worth re-reading later
+- `project/decisions/*` when a durable project-level choice was frozen (use `ai/skill/decision-recording.md`)
+- `project/experiments/*` when a real experiment produced a reusable result
 - `ai/doc/facts/project-scope.md` when scope or boundaries became clearer
 - `ai/doc/facts/golden-cases.md` when stable reusable validation references are worth preserving
-- `ai/skill/*` when a repeated workflow has stabilized and should be reused later
+- `ai/skill/*` when a repeated workflow has stabilized
 
-Use `ai/skill/decision-recording.md` when a frozen project-level decision needs a concise recoverable record.
-
-Write back only stable, reusable context.
 Do not turn every task discussion into permanent docs.
 
-For the first copied-project slice, write back only when something became stable enough to help the next task.
-If nothing stable emerged, skip write-back.
-
-### 7. Prepare release batches only when needed
-Do not create release-readiness records for every task.
-When the project is preparing a real product release, aggregate the release-sensitive slices at the batch level instead.
-Use `ai/doc/templates/release-batch-template.md` if you want a lightweight release record that can be reviewed by both humans and future automation.
-
-## Practical note
-
-This SOP is intended to remain lightweight.  
-The goal is not to create many documents.  
-The goal is to create enough structure that implementation stays controlled, reviewable, and reusable.  
-The goal is one or more small specs, not one large spec.
-
-## When To Use The Phase-Aware Variant
+## Phase-Aware Variant
 
 Use the phase-aware variant when one or more of these are true:
 
-- the work spans multiple phases or checkpoints
+- work spans multiple phases or checkpoints
 - a `main_plan` and one or more `sub_plan` views are both useful
 - task ordering, dependency handling, or failure handling must be made explicit
 - multiple people or models will hand the work across boundaries
 - repair, rollback, replan, or escalation paths need to be reviewable
 
-Do not use the phase-aware variant for every small task.
-If a narrow task request is already clear and reviewable, stay on the default lightweight path.
+See `ai/doc/guides/phase-aware-workflow.md` and `ai/doc/guides/phase-aware-canonical-example.md`.
 
-## Multi-Model Collaboration Variant
+## Multi-Model Collaboration
 
-If design discussion, planning, spec derivation, and execution are split across different tools or different people, use `ai/doc/guides/design-to-spec-handoff.md`.
-
-That guide is an extension of this SOP, not a replacement for it.
-The same core rule still applies: implementation should run from a clear task spec, not directly from a broad design discussion or a broad plan.
+If design discussion, planning, spec derivation, and execution are split across different tools or people, see `ai/doc/guides/design-to-spec-handoff.md`.
+That guide is an extension of this SOP, not a replacement.
+The same core rule still applies: implementation should run from a clear task spec, not directly from a broad design discussion.
