@@ -15,7 +15,7 @@ Minimal project control surface sustainment.
 None. Narrow refinement of the init flow introduced by `20260423-002`.
 
 ### Status
-in_progress
+done
 
 ### Related Specs
 - `ai/doc/specs/20260423-002-init-project-from-brief-skill.md` (completed parent slice; this refines its skill by adding one workflow step)
