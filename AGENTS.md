@@ -55,6 +55,37 @@ Use the repository layers as follows:
 Project-facing documentation should live outside `ai/` in whatever structure the project uses for its own docs.
 The canonical namespace roots are singular: use `ai/doc` and `ai/skill`, not parallel roots such as `ai/docs` or `ai/skills`.
 
+## Version control
+
+This repository is itself a Git repository, but copied projects may run on a different backend. Tool defaults (Cursor, IDE integrations) assume Git, which can cause wrong commands or GUI-interactive popups on non-Git workspaces.
+
+### Detection
+
+Before running any status, diff, add, or commit command, identify the active VCS by checking these markers at the repo root:
+
+- `.git/` for Git
+- `.plastic/plastic.selector` for Plastic SCM / Unity Version Control
+- `.hg/` for Mercurial
+- `.svn/` for Subversion
+
+Do not run Git commands on a non-Git workspace. If multiple markers are present, the project's own `AGENTS.md` or `project/CURRENT.md` must declare which backend is authoritative; otherwise stop and request a decision.
+
+### Plastic SCM rules
+
+When the workspace is Plastic SCM:
+
+- Prefer `cm status`, `cm add`, `cm checkin` for repository operations.
+- Do not use `cm diff` in forms that open the Plastic GUI diff window. Bare file-path or revision-to-revision `cm diff` is considered incorrect in terminal workflows.
+- Only use `cm diff` when it is guaranteed to stay non-interactive, such as with `--format`, `--repositorypaths`, or `--download`.
+- For local workspace review, use `cm status` to discover pending changes and read or diff file content with normal shell reads or other non-interactive text diff tools.
+- Plastic ignore rules live in `ignore.conf` at the repo root. Do not reintroduce `.gitignore`, `.gitattributes`, or `.gitkeep` as the primary mechanism.
+- Cursor indexing exclusions live in `.cursorignore`, separate from `ignore.conf`.
+- Do not use `.gitkeep` to pin empty directories. Document required layout under `project/*` or add meaningful placeholder content when a directory must exist in the depot.
+
+### Bootstrap
+
+When a copied project is on Plastic SCM, run `ai/skill/init-plastic-scm.md` before any implementation work. The init skill generates `ignore.conf`, `.cursorignore`, a project-specific `## Version control` section for the project's own `AGENTS.md`, and removes leftover `.gitignore` and `.gitkeep` files. Other backends do not have a bootstrap skill in this starter; document the chosen backend in the project's `AGENTS.md` and `project/CURRENT.md` manually.
+
 ## Entrypoint model
 
 - `README.md` is the human-facing and project-facing entrypoint.

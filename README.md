@@ -119,6 +119,15 @@ If you also want the recommended recovery-first control surface for humans, keep
 - `ai/doc/templates/project-memory-page-template.md`
 - `ai/skill/session-closeout.md`
 
+If the target project runs on Plastic SCM (Unity Version Control), also keep:
+
+- `ai/skill/init-plastic-scm.md`
+- `ai/doc/templates/ignore-conf-template.md`
+- `ai/doc/templates/cursorignore-template.md`
+- `ai/doc/templates/agents-version-control-section.md`
+
+Run `ai/skill/init-plastic-scm.md` on first entry into such a project before any implementation work. Projects on other backends do not need this bootstrap.
+
 If you want the guided first-use path to remain available after copying, also keep:
 
 - `ai/doc/guides/new-project-sop.md`

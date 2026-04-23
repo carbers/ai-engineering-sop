@@ -59,6 +59,15 @@ The smallest practical copied-project set is:
 Add more files only when they solve a real current need.
 `ai/skill/autopilot.md` is advanced and on-demand; keep it only when the project explicitly wants bounded autonomous execution.
 
+If the target project runs on Plastic SCM (Unity Version Control), also keep:
+
+- `ai/skill/init-plastic-scm.md`
+- `ai/doc/templates/ignore-conf-template.md`
+- `ai/doc/templates/cursorignore-template.md`
+- `ai/doc/templates/agents-version-control-section.md`
+
+On first entry into such a project, run `ai/skill/init-plastic-scm.md` before any implementation work so the project gains correct `ignore.conf`, `.cursorignore`, and a project-specific `## Version control` section in its own `AGENTS.md`. Projects on other backends do not need this bootstrap.
+
 If you want the guided first-use path to remain available after copying, also keep:
 
 - `ai/doc/guides/new-project-sop.md`
