@@ -70,23 +70,13 @@ Before running any status, diff, add, or commit command, identify the active VCS
 
 Do not run Git commands on a non-Git workspace. If multiple markers are present, the project's own `AGENTS.md` or `project/CURRENT.md` must declare which backend is authoritative; otherwise stop and request a decision.
 
-### Plastic SCM rules
-
-When the workspace is Plastic SCM:
-
-- Prefer `cm status`, `cm add`, `cm checkin` for repository operations.
-- Do not use `cm diff` in forms that open the Plastic GUI diff window. Bare file-path or revision-to-revision `cm diff` is considered incorrect in terminal workflows.
-- Only use `cm diff` when it is guaranteed to stay non-interactive, such as with `--format`, `--repositorypaths`, or `--download`.
-- For local workspace review, use `cm status` to discover pending changes and read or diff file content with normal shell reads or other non-interactive text diff tools.
-- Plastic ignore rules live in `ignore.conf` at the repo root. Do not reintroduce `.gitignore`, `.gitattributes`, or `.gitkeep` as the primary mechanism.
-- Cursor indexing exclusions live in `.cursorignore`, separate from `ignore.conf`.
-- Do not use `.gitkeep` to pin empty directories. Document required layout under `project/*` or add meaningful placeholder content when a directory must exist in the depot.
+Backend-specific command, ignore, and GUI-avoidance rules do not live in this starter's `AGENTS.md`. They belong in the target project's own `AGENTS.md` after `init-plastic-scm` (or the equivalent for another backend) has injected them, and in the bootstrap skill itself as runtime guardrails for the pre-init window.
 
 ### Bootstrap
 
-On first entry into a freshly copied SOP starter, run `ai/skill/init-project-from-brief.md` before any planning or implementation work. The skill personalizes `AGENTS.md` and `README.md` identity blocks, initializes `project/CURRENT.md` and `project/DOC_MAP.md`, seeds `ai/doc/facts/project-scope.md`, delegates to `ai/skill/init-plastic-scm.md` when `.plastic/plastic.selector` is present, and hands off to `ai/skill/plan-to-spec.md`.
+On first entry into a freshly copied SOP starter, run `ai/skill/init-project-from-brief.md` before any planning or implementation work. The skill personalizes `AGENTS.md` and `README.md` identity blocks, initializes `project/CURRENT.md` and `project/DOC_MAP.md`, seeds `ai/doc/facts/project-scope.md`, cleans starter spec residue under `ai/doc/specs/`, delegates to `ai/skill/init-plastic-scm.md` when `.plastic/plastic.selector` is present, and hands off to `ai/skill/plan-to-spec.md`.
 
-When a copied project is on Plastic SCM and `init-project-from-brief` has not yet been run, `ai/skill/init-plastic-scm.md` may be invoked directly to avoid Cursor's default `cm diff` GUI behavior. Other backends do not have a bootstrap skill in this starter; document the chosen backend in the project's `AGENTS.md` and `project/CURRENT.md` manually.
+When a copied project is on Plastic SCM and `init-project-from-brief` has not yet been run, `ai/skill/init-plastic-scm.md` may be invoked directly; read its `Pre-execution guardrails` before any `cm` command to avoid Cursor's default `cm diff` GUI behavior. Other backends do not have a bootstrap skill in this starter; document the chosen backend in the project's `AGENTS.md` and `project/CURRENT.md` manually.
 
 ## Entrypoint model
 

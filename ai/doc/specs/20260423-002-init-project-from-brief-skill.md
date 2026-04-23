@@ -12,7 +12,7 @@ Minimal project control surface sustainment.
 None. This narrows the "turn copied starter into real project" recurring need into one reviewable slice.
 
 ### Status
-in_progress
+done
 
 ### Related Specs
 - `ai/doc/specs/20260423-001-init-plastic-scm-bootstrap.md` (delegated to when the copied project is on Plastic SCM)

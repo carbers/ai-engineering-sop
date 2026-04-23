@@ -5,6 +5,16 @@ Bootstrap a copied project that uses Plastic SCM (Unity Version Control) so that
 
 This skill runs **once** per copied project. It is not a recurring workflow.
 
+## Pre-execution guardrails
+
+These rules apply from the moment this skill starts and continue throughout its execution. They also apply when `ai/skill/init-project-from-brief.md` delegates to this skill before the copied project's own `AGENTS.md` has been updated. They cover the pre-init window when backend-specific rules have not yet been injected into the project's own `AGENTS.md`.
+
+- Do not run Git commands against a Plastic workspace. `.plastic/plastic.selector` is the authoritative marker; if it exists, treat the workspace as Plastic regardless of any leftover `.gitignore` or `.gitkeep`.
+- Do not invoke `cm diff` in forms that open the Plastic GUI diff window. Bare file-path or revision-to-revision `cm diff` in a terminal context is considered incorrect. Use `cm diff` only with non-interactive flags such as `--format`, `--repositorypaths`, or `--download`.
+- Prefer `cm status` for local review. Read file content with normal text reads. Do not drive `cm diff` as a browsing tool.
+- Do not reintroduce `.gitignore`, `.gitattributes`, or `.gitkeep` during repair, rollback, or retry inside this skill; the skill's job is to remove them, not reinstate them.
+- These guardrails are runtime rules for the executing agent. Do not copy them into project files; the injection target for project-facing rules is `ai/doc/templates/agents-version-control-section.md`.
+
 ## When to use
 Use this skill when:
 - a project copied from this starter is placed into a Plastic SCM workspace (the marker `.plastic/plastic.selector` is present)

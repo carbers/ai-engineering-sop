@@ -34,6 +34,7 @@ Do not use this skill:
 - initialized `project/DOC_MAP.md` from template
 - seeded `ai/doc/facts/project-scope.md` from `project-scope-template.md` with scope bullets drawn from the brief
 - `project/memory/*` left as empty scaffolding from `project-memory-readme-template.md` unless the brief contains stable repeated agreements
+- cleaned `ai/doc/specs/` so only the specs guide `README.md` remains; starter development history and starter example specs are deleted, and README references to deleted example spec filenames are trimmed
 - delegation to `init-plastic-scm` when `.plastic/plastic.selector` exists
 - an init report with: changes made, human-review flags, prune suggestions, and a single next-step handoff to `plan-to-spec`
 
@@ -168,12 +169,26 @@ Instantiate `ai/doc/templates/project-scope-template.md` with:
 
 Do not leave the SOP starter's own scope text in place. This file is seeded fresh per project.
 
-### 8. Emit the init report
+### 8. Clean starter spec residue
+In the copied project, `ai/doc/specs/` still contains the SOP starter's own task specs and example specs carried over from the starter repository. These are development history for the starter itself and are noise in a new project.
+
+Delete every file under `ai/doc/specs/` whose filename matches the dated spec pattern `YYYYMMDD-NNN-*.md` (for example `20260104-001-example-first-copied-project-quickstart.md` or `20260422-001-sop-execution-link-hardening.md`). Keep `ai/doc/specs/README.md`; that is the specs guide and is not a spec instance.
+
+After deletion, scan the copied `README.md` and the copied `ai/doc/guides/*` for citations that name any deleted spec filename. Remove those specific lines or bullet items; do not rewrite surrounding prose. Generic phrases like "see the example spec" that do not name a file may stay.
+
+Do not delete files under `ai/doc/guides/*`, `ai/doc/templates/*`, or `ai/skill/*` in this step. Those are prune suggestions, not automatic removals, and belong in the init report's `Prune suggestions` section.
+
+Record the deletion list and the edited README / guide lines in the init report.
+
+Before this step runs, the starter-self guard in `Stop conditions` must already have cleared; if `ai/doc/facts/project-scope.md` still describes "reusable SOP starter", stop instead of deleting.
+
+### 9. Emit the init report
 Produce a short report with these sections:
 - `Changed files`: list of files modified or created, with section names when helpful
+- `Deleted`: list of deleted starter spec files and any README / guide lines pruned because they cited deleted specs
 - `Delegated bootstraps`: init-plastic-scm result when applicable
 - `Flagged for human review`: starter-specific README sections to prune or rewrite, any free-form paragraphs that were not auto-updated
-- `Prune suggestions`: list of starter files that are unlikely to apply to this project (guides, examples, optional skills). Do not delete them; let the user decide.
+- `Prune suggestions`: list of starter files that are unlikely to apply to this project (guides, examples, optional skills under `ai/doc/guides/*`, `ai/doc/templates/*`, `ai/skill/*`). Do not delete them; let the user decide.
 - `Next step`: a single handoff line pointing to `ai/skill/plan-to-spec.md` with the brief as its plan-level input
 
 ## Stop conditions
@@ -196,3 +211,6 @@ Return `replan_required` when:
 - auto-deleting starter files the user might still want
 - producing a decision record without being asked
 - running twice and stacking identity blocks
+- deleting `ai/doc/specs/README.md` during spec residue cleanup
+- deleting files under `ai/doc/guides/*`, `ai/doc/templates/*`, or `ai/skill/*` during spec residue cleanup instead of listing them as prune suggestions
+- rewriting long prose in `README.md` or guides when trimming citations of deleted example specs
