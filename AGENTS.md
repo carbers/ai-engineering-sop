@@ -8,7 +8,7 @@ Rules are few and hard. State does not live here — it lives in `ai/PROGRESS.md
 
 1. **Where a rule exists → follow it exactly.** No improvising, no unrequested "improvements".
 2. **Where no rule covers the case, or it's ambiguous → stop and confirm with me first.** Do not decide on your own.
-3. **After we confirm → immediately write the outcome as a new rule** under `## 5. Specific rules`.
+3. **After we confirm → if the outcome is a reusable rule (not a one-off approval), write it** under `## 5. Specific rules`.
 4. Goal: the ruleset **converges toward my habits through use**. An uncovered case is not a defect — it's the signal to add a rule.
 
 Amendment process: on hitting a gap, propose **one draft rule**; write it into this file only after I approve.
@@ -46,17 +46,18 @@ When in doubt, treat it as "confirm first".
 
 ## 4. Self-verification
 
-Before marking a slice done — and before any commit — explicitly check the work against §1–§3 and record the outcome in `ai/PROGRESS.md`:
+Before marking a slice done — and before any commit — silently check the work against §1–§3. Write to `ai/PROGRESS.md` only when a check fails or the slice changed durable state (per §3), never one line per commit. The checks:
 
 - Did any change hit a "confirm first" case (§1) without confirming?
 - Did any file land outside its predetermined home, or a temp file enter the repo (§2)?
 - Is the ledger refreshed (§3), and was any new/ambiguous case codified or any conflict surfaced (§0)?
 
-If a check fails, fix it before proceeding; if the fix needs a decision, stop and confirm. This is a self-audit, not a guarantee: a passed check means "I verified", not "it's certified".
+If a check fails, fix it before proceeding; if the fix needs a decision, stop and confirm.
 
 ## 5. Specific rules
 
-> Starts empty. Each time the amendment loop in `## 0` fires, append one rule here with its date.
+> Starts empty. Each time the amendment loop in `## 0` fires, append one rule here.
 > Keep each to roughly one line, executable, non-redundant with the above.
 
-- 2026-07-24: AI-produced document artifacts live under `ai/` (e.g. `ai/PROGRESS.md`), isolated from human-facing files. The repo root holds only shared/human entry files: `README.md`, `AGENTS.md`, `CLAUDE.md`.
+- AI-produced document artifacts live under `ai/` (e.g. `ai/PROGRESS.md`), isolated from human-facing files. The repo root holds only shared/human entry files: `README.md`, `AGENTS.md`, `CLAUDE.md`.
+- Stay attentive to performance. On clearly poor performance, fix the bottleneck before (re-)running — don't idly wait out a known-slow run.
