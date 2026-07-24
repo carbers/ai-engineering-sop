@@ -5,6 +5,8 @@ A minimal SOP for solo + AI collaboration. Its core is a set of constraints for 
 Two files are the whole thing:
 
 - **`AGENTS.md`** — the collaboration constitution. The single source of truth. Entry point for AI tools.
-- **`PROGRESS.md`** — the AI-maintained live ledger. Overview + active items.
+- **`ai/PROGRESS.md`** — the AI-maintained live ledger. Overview + active items.
+
+AI-produced artifacts are isolated under `ai/`; the root keeps only the shared entry files.
 
 Design principle: **few hard rules, state kept separate, everything else grows on demand** — no pre-built templates, guides, or skill piles. When a rule doesn't cover a case, the AI confirms first, then codifies the outcome as a new rule (see `AGENTS.md` section 0).
